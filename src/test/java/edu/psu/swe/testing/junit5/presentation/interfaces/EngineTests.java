@@ -50,11 +50,18 @@ public interface EngineTests<T> extends CarTests<T> {
 		assertTrue(getRPM() < idleRpm, "Check RPMs with 50% fuel decrease. Current RPM is " + getRPM());	
 	}
 
+	//TODO: Add conditionally disable. Only drag cars and motorcycles have manual kill switches.
 	@Test
 	//Is this where the conditional disabling goes?
 	default void killSwitchTest(){
 		assertTrue(isEngineRunning(), "Engine not running.");
 		hitKillSwitch();
 		assertFalse(isEngineRunning(), "Engine should had stopped with killswitch. Current RPM is " + getRPM());
+	}
+	
+	//TODO: Add long running annotation
+	@Test
+	default void runTillFailure(){
+		//Some really, really long test
 	}
 }
