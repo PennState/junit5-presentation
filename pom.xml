@@ -9,6 +9,13 @@
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+
+    <version.junit>4.12</version.junit>
+
+    <specifier.junit>M2</specifier.junit>
+    <version.junit.jupiter>5.0.0-${specifier.junit}</version.junit.jupiter>
+    <version.junit.platform>1.0.0-${specifier.junit}</version.junit.platform>
+    <version.junit.vintage>${version.junit}.0-${specifier.junit}</version.junit.vintage>
   </properties>
 
   <build>
@@ -20,7 +27,18 @@
           <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-surefire-provider</artifactId>
-            <version>1.0.0-M2</version>
+            <version>${version.junit.platform}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${version.junit.jupiter}</version>
+            <!-- <scope>test</scope> -->
+          </dependency>
+          <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-runner</artifactId>
+            <version>${version.junit.platform}</version>
           </dependency>
         </dependencies>
         <configuration>
@@ -35,15 +53,15 @@
   <dependencies>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-engine</artifactId>
-      <version>5.0.0-M2</version>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${version.junit.jupiter}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.junit.platform</groupId>
-      <artifactId>junit-platform-runner</artifactId>
-      <version>1.0.0-M2</version>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
     </dependency>
   </dependencies>
-  
+
 </project>
