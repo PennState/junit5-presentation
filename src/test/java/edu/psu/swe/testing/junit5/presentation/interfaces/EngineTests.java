@@ -7,14 +7,17 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
+import edu.psu.swe.testing.junit5.presentation.cars.PSUBioDieselEngine;
+import edu.psu.swe.testing.junit5.presentation.models.Car;
+import edu.psu.swe.testing.junit5.presentation.models.Engine;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
-
-public interface EngineTests<T> extends CarTests<T> {
-
+@Disabled
+public interface EngineTests{
 	
-	T createEngineTests();
+	Engine buildEngine();
+	
 	abstract boolean isEngineRunning();
 	abstract void startEngine();
 	abstract void stopEngine();
@@ -26,7 +29,8 @@ public interface EngineTests<T> extends CarTests<T> {
 	
 	@BeforeEach
 	default void startEngineTest(){
-		startEngine();
+		Engine engine = buildEngine();
+		engine.startEngine();
 		assertTrue(isEngineRunning(), "Engine failed to start.");
 	}
 	
@@ -64,4 +68,5 @@ public interface EngineTests<T> extends CarTests<T> {
 	default void runTillFailure(){
 		//Some really, really long test
 	}
+
 }

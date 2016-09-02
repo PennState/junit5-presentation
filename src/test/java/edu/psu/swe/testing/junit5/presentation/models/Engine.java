@@ -1,26 +1,23 @@
 package edu.psu.swe.testing.junit5.presentation.models;
 
-public class Engine {
-	private EngineType type;
-	private boolean running;
-	private int RPM;
-	private IgnitionStatus ignition;
+public abstract class Engine {
+	protected static EngineType type;
+	protected boolean running;
+	protected int RPM = 0;
+	protected IgnitionStatus ignition;
 	
 	public enum IgnitionStatus{ON, OFF, ACCESSORIES}
-	public enum EngineType{GASOLINE, DIESEL, BIODIESEL, JETFUEL, ELECTRIC}
+	public enum EngineType{GASOLINE, DIESEL, BIODIESEL, TOP_FUEL, ELECTRIC}
 	
 	
 	public Engine(EngineType type) {
-		super();
-		this.type = type;
+		Engine.type = type;
 	}
 	
 	public EngineType getType() {
 		return type;
 	}
-	public void setType(EngineType type) {
-		this.type = type;
-	}
+
 	public boolean isRunning() {
 		return running;
 	}
@@ -38,4 +35,6 @@ public class Engine {
 		this.ignition = ignition;
 	}
 
+	public abstract void startEngine();
+	public abstract void stopEngine();
 }
