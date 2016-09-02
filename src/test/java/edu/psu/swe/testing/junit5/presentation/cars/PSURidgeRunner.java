@@ -11,7 +11,7 @@ import edu.psu.swe.testing.junit5.presentation.models.Engine;
 import edu.psu.swe.testing.junit5.presentation.models.Engine.EngineType;
 
 public class PSURidgeRunner extends Car{
-	private static Engine engine = new Engine(EngineType.BIODIESEL);
+	private static Engine engine = new PSUBioDieselEngine();
 	private static DriveTrain drive = new DriveTrain(DriveType.ALL, TransType.MANUAL, DutyType.SPORT);
 	private static Body body = new Body(BodyStyle.SPORT, true);
 	
