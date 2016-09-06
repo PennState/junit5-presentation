@@ -4,6 +4,7 @@ public abstract class Engine {
 	protected static EngineType type;
 	protected boolean running;
 	protected int RPM = 0;
+	protected static int idle;
 	protected IgnitionStatus ignition;
 	
 	public enum IgnitionStatus{ON, OFF, ACCESSORIES}
@@ -37,4 +38,9 @@ public abstract class Engine {
 
 	public abstract void startEngine();
 	public abstract void stopEngine();
+
+	public int getIdle() {
+		return idle;
+	}
+
 }

@@ -2,26 +2,30 @@ package edu.psu.swe.testing.junit5.presentation.interfaces;
 
 import org.junit.jupiter.api.Disabled;
 
+import edu.psu.swe.testing.junit5.presentation.cars.PSUBioDieselEngine;
 import edu.psu.swe.testing.junit5.presentation.models.Engine;
+import edu.psu.swe.testing.junit5.presentation.models.Engine.IgnitionStatus;
 
 @Disabled
 public class BioDieselEngineTests implements EngineTests{
 
+	Engine engine;
+	
 	@Override
 	public Engine buildEngine() {
-		// TODO Auto-generated method stub
-		return null;
+		//engine = new PSUBioDieselEngine();
+		return engine;
 	}
 
 	@Override
 	public boolean isEngineRunning() {
-		// TODO Auto-generated method stub
-		return false;
+		return engine.isRunning();
 	}
 
 	@Override
 	public void startEngine() {
-		// TODO Auto-generated method stub
+		engine.startEngine();
+		
 		
 	}
 

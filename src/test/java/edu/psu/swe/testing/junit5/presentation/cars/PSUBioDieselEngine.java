@@ -2,16 +2,18 @@ package edu.psu.swe.testing.junit5.presentation.cars;
 
 import edu.psu.swe.testing.junit5.presentation.models.Engine;
 
-public class PSUBioDieselEngine extends Engine{
+public class PSUBioDieselEngine extends BioDieselEngine{
 
+	Engine engine;
+	
 	public PSUBioDieselEngine() {
-		super(EngineType.BIODIESEL);
+		idle = 500;
 	}
-
+	
 	@Override
 	public void startEngine() {
+		setIgnition(IgnitionStatus.ON);
 		setRPM(500);
-		
 	}
 
 	@Override
@@ -20,7 +22,6 @@ public class PSUBioDieselEngine extends Engine{
 		setRPM(500);
 		
 	}
-	
-	
+
 
 }
