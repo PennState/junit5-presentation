@@ -53,6 +53,14 @@ public class FirstTests {
       assertTrue(i != 4);
     }
   }
+  
+  @Test
+  public void testOneThroughTenByLoopWithStream() {
+    Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10).forEach((i) -> {
+      System.out.println("" + i);
+      assertTrue(i != 4);
+    });
+  }
 
   public class UseridParameter {
 
