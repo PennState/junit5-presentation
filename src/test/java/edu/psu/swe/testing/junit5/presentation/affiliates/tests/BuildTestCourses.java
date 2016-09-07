@@ -37,4 +37,18 @@ public class BuildTestCourses {
 	"Systems of linear equations; matrix algebra; eigenvalues and eigenvectors; linear systems of differential equations.",
 	2);
 	}
+	
+	public static Course phil003L() {
+		return new Course("PHIL003L",
+				"Persons, Moral Values and the Good Life",
+				"Major ethical positions and assumptions regarding questions of freedom, choice, obligation, and conflicts in contemporary moral conduct, values, and reasoning.",
+				3);
+	}
+	
+	public static Course eng003() {
+		return new Course("ENG003",
+				"Rhetoric and Composition",
+				"Instruction and practice in writing expository prose that shows sensitivity to audience and purpose.",
+				3);
+	}
 }
