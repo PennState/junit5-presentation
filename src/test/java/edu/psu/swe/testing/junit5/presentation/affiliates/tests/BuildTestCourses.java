@@ -86,7 +86,7 @@ public class BuildTestCourses {
 		return new Course("MUSIC421",
 	" Jazz Combo Class",
 	"Study and performance of small group jazz.",
-	1,
+	7,
 	false);
 	}
 	
