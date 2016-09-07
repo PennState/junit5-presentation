@@ -3,8 +3,6 @@
  */
 package edu.psu.swe.testing.junit5.presentation.callbacks;
 
-import java.lang.reflect.AnnotatedElement;
-
 import org.junit.jupiter.api.extension.AfterAllCallback;
 import org.junit.jupiter.api.extension.AfterEachCallback;
 import org.junit.jupiter.api.extension.AfterTestExecutionCallback;
