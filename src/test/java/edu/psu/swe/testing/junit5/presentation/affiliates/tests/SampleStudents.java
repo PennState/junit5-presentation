@@ -45,6 +45,14 @@ public class SampleStudents {
 		maxed.setLastName("Cooper");
 		maxed.setFirstName("Sheldon");
 		maxed.setMajor("theoretical physics");
+		maxed.addCourse(BuildTestCourses.engl213());
+		maxed.addCourse(BuildTestCourses.math220());
+		maxed.addCourse(BuildTestCourses.stat401());
+		maxed.addCourse(BuildTestCourses.chem408());
+		maxed.addCourse(BuildTestCourses.insc480());
+		maxed.addCourse(BuildTestCourses.emech210());
+		maxed.addCourse(BuildTestCourses.span200());
+		maxed.addCourse(BuildTestCourses.music421());
 		
 		return maxed;
 	}
