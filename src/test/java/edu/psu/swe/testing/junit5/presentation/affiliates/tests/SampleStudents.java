@@ -30,4 +30,22 @@ public class SampleStudents {
 		
 		return partTimeStudent;
 	}
+	
+	public static Student getNewFreshman(){
+		Student freshman = new Student();
+		freshman.setLastName("Blutarsky");
+		freshman.setFirstName("John");
+		freshman.setMajor("Party Studies");
+		
+		return freshman;
+	}
+	
+	public static Student getMaxedStudent(){
+		Student maxed = new Student();
+		maxed.setLastName("Cooper");
+		maxed.setFirstName("Sheldon");
+		maxed.setMajor("theoretical physics");
+		
+		return maxed;
+	}
 }
