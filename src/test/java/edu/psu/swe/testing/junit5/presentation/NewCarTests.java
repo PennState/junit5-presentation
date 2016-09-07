@@ -3,6 +3,7 @@
  */
 package edu.psu.swe.testing.junit5.presentation;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -10,6 +11,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
  * @author smoyer1
  *
  */
+@Disabled
 @ExtendWith(JunkTestFilter.class)
 public class NewCarTests {
   

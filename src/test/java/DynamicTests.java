@@ -21,6 +21,7 @@ import org.junit.jupiter.api.TestInfo;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
 
+@Disabled
 @RunWith(JUnitPlatform.class)
 public class DynamicTests {
 
