@@ -11,8 +11,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
  * @author smoyer1
  *
  */
-@Disabled
-@ExtendWith(JunkTestFilter.class)
+@ExtendWith(JunkyTestDetector.class)
 public class NewCarTests {
   
   @Test
