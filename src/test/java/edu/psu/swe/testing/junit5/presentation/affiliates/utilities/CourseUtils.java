@@ -31,6 +31,15 @@ public class CourseUtils {
 		return totalCredits;
 	}
 
+	public static String findPrereq(Course course){
+		String prereq = null;
+		System.out.println(course.getId() + " has prereq " + course.isPreRequisite());
+		if (course.isPreRequisite()){
+			prereq = course.getPreReqCourse();
+		}
+		return prereq;
+	}
+	
 	public Stream<Object> isPreRequisite(Student student) {
 		List<Course> courses = student.getCourses();
 		Stream<Object> pr = courses.stream().map(ch -> ch.isPreRequisite());
