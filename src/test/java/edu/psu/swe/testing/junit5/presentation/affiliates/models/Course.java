@@ -6,15 +6,16 @@ public class Course {
 	private String name;
 	private String description;
 	private int creditHours;
+	private boolean preRequisite;
+	private String preReqCourse;
 	
-	
-	
-	public Course(String id, String name, String description, int creditHours) {
+	public Course(String id, String name, String description, int creditHours, boolean preRequisite) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.creditHours = creditHours;
+		this.preRequisite=preRequisite;
 	}
 	public String getId() {
 		return id;
@@ -40,6 +41,17 @@ public class Course {
 	public void setCreditHours(int creditHours) {
 		this.creditHours = creditHours;
 	}
-	
-	
+	public boolean isPreRequisite() {
+		return preRequisite;
+	}
+	public void setPreRequisite(boolean preRequisite) {
+		this.preRequisite = preRequisite;
+	}
+	public String getPreReqCourse() {
+		return preReqCourse;
+	}
+	public void setPreReqCourse(String preReqCourse) {
+		this.preReqCourse = preReqCourse;
+	}
+		
 }
