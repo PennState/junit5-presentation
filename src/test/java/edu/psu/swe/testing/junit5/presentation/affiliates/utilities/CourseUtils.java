@@ -1,6 +1,7 @@
 package edu.psu.swe.testing.junit5.presentation.affiliates.utilities;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 import edu.psu.swe.testing.junit5.presentation.affiliates.models.Course;
 import edu.psu.swe.testing.junit5.presentation.affiliates.models.Student;
@@ -19,5 +20,11 @@ public class CourseUtils {
 		int totalCredits = courses.stream().mapToInt(ch->ch.getCreditHours()).sum();
 		
 		return totalCredits;
+	}
+	
+	public Stream<Object> isPreRequisite(Student student) {
+		List<Course> courses = student.getCourses();
+		Stream<Object> pr = courses.stream().map(ch->ch.isPreRequisite());		
+		return pr;
 	}
 }
