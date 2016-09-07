@@ -9,7 +9,44 @@
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+
+    <qualifier.junit>SNAPSHOT</qualifier.junit>
+
+    <version.junit>4.12</version.junit>
+    <version.junit.jupiter>5.0.0-${qualifier.junit}</version.junit.jupiter>
+    <version.junit.platform>1.0.0-${qualifier.junit}</version.junit.platform>
+    <version.junit.vintage>${version.junit}.0-${qualifier.junit}</version.junit.vintage>
   </properties>
+
+  <repositories>
+    <repository>
+      <id>snapshots-repo</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <!-- Do NOT cache JUnit 5 snapshot JARs. -->
+        <updatePolicy>always</updatePolicy>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>snapshots-repo</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <!-- Do NOT cache JUnit 5 snapshot JARs. -->
+        <updatePolicy>always</updatePolicy>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
 
   <build>
     <plugins>
@@ -20,7 +57,7 @@
           <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-surefire-provider</artifactId>
-            <version>1.0.0-M2</version>
+            <version>${version.junit.platform}</version>
           </dependency>
         </dependencies>
         <configuration>
@@ -36,14 +73,15 @@
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
-      <version>5.0.0-M2</version>
+      <version>${version.junit.jupiter}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.junit.platform</groupId>
       <artifactId>junit-platform-runner</artifactId>
-      <version>1.0.0-M2</version>
+      <version>${version.junit.platform}</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
-  
+
 </project>

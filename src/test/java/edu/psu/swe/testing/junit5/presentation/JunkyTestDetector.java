@@ -13,7 +13,7 @@ import org.junit.jupiter.api.extension.TestExtensionContext;
  * @author smoyer1
  *
  */
-public class JunkTestFilter implements TestExecutionCondition {
+public class JunkyTestDetector implements TestExecutionCondition {
 
   /* (non-Javadoc)
    * @see org.junit.jupiter.api.extension.TestExecutionCondition#evaluate(org.junit.jupiter.api.extension.TestExtensionContext)
