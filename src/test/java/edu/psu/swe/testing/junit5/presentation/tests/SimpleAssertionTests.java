@@ -1,4 +1,4 @@
-package edu.psu.swe.testing.jnit5.presentation.tests;
+package edu.psu.swe.testing.junit5.presentation.tests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
