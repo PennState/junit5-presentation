@@ -1,10 +1,7 @@
 package edu.psu.swe.testing.junit5.presentation.affiliates.tests;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.expectThrows;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -66,45 +63,5 @@ public class CourseLoadTests {
 				"Student has more than allowed credit hours.");
 	}
 	
-	@Test
-	@DisplayName("assertThrows")
-	void registerCourseTest1() {
-		Student student = SampleStudents.getNewFreshman();
-
-		CourseUtils courseUtils = new CourseUtils();
-
-		assertThrows(Exception.class, () -> {
-			courseUtils.registerForCourse(student, BuildTestCourses.engl213());
-			courseUtils.registerForCourse(student, BuildTestCourses.math220());
-			courseUtils.registerForCourse(student, BuildTestCourses.stat401());
-			courseUtils.registerForCourse(student, BuildTestCourses.chem408());
-			courseUtils.registerForCourse(student, BuildTestCourses.insc480());
-			courseUtils.registerForCourse(student, BuildTestCourses.emech210());
-			courseUtils.registerForCourse(student, BuildTestCourses.span200());
-			courseUtils.registerForCourse(student, BuildTestCourses.music421());
-		});
-
-	}
-
-	@Test
-	@DisplayName("expectThrows")
-	void registerCourseTest2() {
-		Student student = SampleStudents.getNewFreshman();
-
-		CourseUtils courseUtils = new CourseUtils();
-
-		Throwable exception = expectThrows(Exception.class, () -> {
-			courseUtils.registerForCourse(student, BuildTestCourses.engl213());
-			courseUtils.registerForCourse(student, BuildTestCourses.math220());
-			courseUtils.registerForCourse(student, BuildTestCourses.stat401());
-			courseUtils.registerForCourse(student, BuildTestCourses.chem408());
-			courseUtils.registerForCourse(student, BuildTestCourses.insc480());
-			courseUtils.registerForCourse(student, BuildTestCourses.emech210());
-			courseUtils.registerForCourse(student, BuildTestCourses.span200());
-			courseUtils.registerForCourse(student, BuildTestCourses.music421());
-		});
-		assertEquals("can't register as student is excedding max allowed creits", exception.getMessage());
-
-	}
 
 }

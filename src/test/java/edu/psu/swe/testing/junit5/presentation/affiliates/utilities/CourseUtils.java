@@ -15,14 +15,10 @@ public class CourseUtils {
 				
 		int studentCourseLoad = calcStudentLoad(student);
 		int courseCredit = course.getCreditHours();
-		
-		System.out.println("load  = " + studentCourseLoad);
-		
+				
 		if ((studentCourseLoad + courseCredit) <= CourseUtils.MAX_ALLOWED) {
-			System.out.println("allowed to register for " + course.getId());
 			student.addCourse(course);
 		} else {
-			System.out.println(course + "exceeding credit limit");
 			throw new Exception("can't register as student is excedding max allowed creits");
 		}
 
