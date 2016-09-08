@@ -327,6 +327,10 @@ a:focus {
   text-align: center;
 }
 
+.slide-title p {
+  text-align: center;
+}
+
 /*
     And now we start to style each step separately.
 
