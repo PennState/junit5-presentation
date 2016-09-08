@@ -1,0 +1,340 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*
+    Now here is when interesting things start to appear.
+
+    We set up <body> styles with default font and nice gradient in the background.
+    And yes, there is a lot of repetition there because of -prefixes but we don't
+    want to leave anybody behind.
+*/
+body {
+    font-family: 'PT Sans', sans-serif;
+    min-height: 740px;
+
+    background: rgb(215, 215, 215);
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
+    background: -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:    -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:     -ms-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:      -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:         radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+}
+
+/*
+    Now let's bring some text styles back ...
+*/
+b, strong { font-weight: bold }
+i, em { font-style: italic }
+
+/*
+    ... and give links a nice look.
+*/
+a {
+    color: inherit;
+    text-decoration: none;
+    padding: 0 0.1em;
+    background: rgba(255,255,255,0.5);
+    text-shadow: -1px -1px 2px rgba(100,100,100,0.9);
+    border-radius: 0.2em;
+
+    -webkit-transition: 0.5s;
+    -moz-transition:    0.5s;
+    -ms-transition:     0.5s;
+    -o-transition:      0.5s;
+    transition:         0.5s;
+}
+
+a:hover,
+a:focus {
+    background: rgba(255,255,255,1);
+    text-shadow: -1px -1px 2px rgba(100,100,100,0.5);
+}
+
+/*
+    Because the main point behind the impress.js demo is to demo impress.js
+    we display a fallback message for users with browsers that don't support
+    all the features required by it.
+
+    All of the content will be still fully accessible for them, but I want
+    them to know that they are missing something - that's what the demo is
+    about, isn't it?
+
+    And then we hide the message, when support is detected in the browser.
+*/
+
+.fallback-message {
+    font-family: sans-serif;
+    line-height: 1.3;
+
+    width: 780px;
+    padding: 10px 10px 0;
+    margin: 20px auto;
+
+    border: 1px solid #E4C652;
+    border-radius: 10px;
+    background: #EEDC94;
+}
+
+.fallback-message p {
+    margin-bottom: 10px;
+}
+
+.impress-supported .fallback-message {
+    display: none;
+}
+
+/*
+    Now let's style the presentation steps.
+
+    We start with basics to make sure it displays correctly in everywhere ...
+*/
+
+.step {
+    position: relative;
+    width: 900px;
+    padding: 40px;
+    margin: 20px auto;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    -ms-box-sizing:     border-box;
+    -o-box-sizing:      border-box;
+    box-sizing:         border-box;
+
+    font-family: 'PT Serif', georgia, serif;
+    font-size: 48px;
+    line-height: 1.5;
+}
+
+/*
+    ... and we enhance the styles for impress.js.
+
+    Basically we remove the margin and make inactive steps a little bit transparent.
+*/
+.impress-enabled .step {
+    margin: 0;
+    opacity: 0.3;
+
+    -webkit-transition: opacity 1s;
+    -moz-transition:    opacity 1s;
+    -ms-transition:     opacity 1s;
+    -o-transition:      opacity 1s;
+    transition:         opacity 1s;
+}
+
+.impress-enabled .step.active { opacity: 1 }
+
+#big-logo {
+  margin-left: 500px;
+  margin-top: -6000px;
+}
+
+#big-logo img {
+  height: 6310px;
+  width: 13780px;
+}
+
+/*
+    These 'slide' step styles were heavily inspired by HTML5 Slides:
+    http://html5slides.googlecode.com/svn/trunk/styles.css
+
+    ;)
+
+    They cover everything what you see on first three steps of the demo.
+*/
+.slide {
+    display: block;
+    
+/*     width: 900px; */
+    width: 1250px;
+    height: 700px;
+    
+    margin: 0;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 125px;
+    padding-top: 115px;
+
+/*     background-color: white; */
+/*     border: 1px solid rgba(0, 0, 0, .3); */
+/*     border-radius: 10px; */
+/*     box-shadow: 0 2px 6px rgba(0, 0, 0, .1); */
+    background-color: white;
+    
+    border: 30px solid #1E407D;
+/*     border-bottom: 30px solid #1E407D; */
+/*     border-left: 30px solid #1E407D; */
+/*     border-right: 30px solid #1E407D; */
+/*     border-top: 30px solid white; */
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+
+    color: rgb(102, 102, 102);
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -1px;
+}
+
+.slide:before {
+	background-color: white;
+	background-image: url("../images/PS_HOR_RGB_2C.png");
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-size: 35%;
+	content: '';
+	height: 140px;
+	left: 0;
+	position: absolute;
+	top: -30px;
+	width: 100%;
+}
+
+.slide:after {
+	background-image: url("../images/magnifying-class-junit5-check.png");
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	background-size: 158px 80%;
+	border-bottom: 35px solid #BECDD4;
+	display: block;
+	content: '';
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.slide q {
+    display: block;
+    font-size: 50px;
+    line-height: 72px;
+
+    margin-top: 100px;
+}
+
+.slide q strong {
+    white-space: nowrap;
+}
+
+.slide h1 {
+	font-size: 48pt;
+	line-height: 1;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.slide h1 img {
+  height: 60pt;
+  margin-right: 20pt;
+  vertical-align: middle;
+  width: 60pt;
+}
+
+.slide h2 {
+  font-size: 40px;
+  line-height: 1.5;
+  margin-bottom:20px;
+}
+
+.slide-bulleted {
+}
+
+.slide-bulleted h1 {
+  
+}
+
+.slide-bulleted ul {
+  list-style: disc;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.slide-bulleted ul li {
+  font-size: 32px;
+  line-height: 1.5;
+  margin-left: 30px;
+}
+
+.slide-image {
+}
+
+.slide-image img {
+  height: 380px;
+/*   width: 680px; */
+  width: 1030px;
+}
+
+.slide-section {
+  
+}
+
+.slide-section h1 {
+  margin-top: 150px;
+}
+
+.slide-title  h1 {
+	margin-top: 100px;
+}
+
+.slide-title h2 {
+  text-align: center;
+}
+
+/*
+    And now we start to style each step separately.
+
+    I agree that this may be not the most efficient, object-oriented and
+    scalable way of styling, but most of steps have quite a custom look
+    and typography tricks here and there, so they had to be styled separately.
+
+    First is the title step with a big <h1> (no room for padding) and some
+    3D positioning along Z axis.
+*/
+
