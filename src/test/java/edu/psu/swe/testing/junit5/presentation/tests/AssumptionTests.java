@@ -2,6 +2,7 @@ package edu.psu.swe.testing.junit5.presentation.tests;
 
 import static org.junit.jupiter.api.Assumptions.assumeFalse;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
+import static org.junit.jupiter.api.Assumptions.assumingThat;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -25,7 +26,7 @@ public class AssumptionTests {
 
 	/*
 	 * assumeFalse passes to skip the test
-	 */ 
+	 */
 	@Test
 	@DisplayName("assumeFalse test")
 	public void assumeFalseTest() {
@@ -35,10 +36,10 @@ public class AssumptionTests {
 		student.addCourse(BuildTestCourses.math220());
 		System.out.println("MATH course added");
 	}
-	
+
 	/*
 	 * assumeFalse fails, therefore executing the test
-	 */ 
+	 */
 	@Test
 	@DisplayName("assumeFalse fails test")
 	public void assumeFalseFailTest() {
@@ -48,8 +49,22 @@ public class AssumptionTests {
 		staff.setFirstName("NOSKIP");
 		System.out.println("staff first name set to " + staff.getFirstName());
 	}
-	
-	//add assumingThat
+
+	/*
+	 * assumingThat - test passes when the assumption is valid
+	 */
+	@Test
+	@DisplayName("assumingThat test")
+	public void assumingThatTest() {
+
+		Student student = new Student();
+
+		assumingThat(checkAffiliateClass(student), () -> {
+			System.out.println("assumingThat is valid");
+			student.addCourse(BuildTestCourses.music421());
+		});
+
+	}
 
 	public boolean checkAffiliateClass(Affilliate affilliate) {
 		boolean isStudent = false;
