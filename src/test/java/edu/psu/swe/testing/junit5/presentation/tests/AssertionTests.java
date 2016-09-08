@@ -10,7 +10,8 @@ import org.junit.jupiter.api.Test;
 import edu.psu.swe.testing.junit5.presentation.affiliates.models.Student;
 import edu.psu.swe.testing.junit5.presentation.affiliates.tests.SampleStudents;
 
-public class SimpleAssertionTests {
+@DisplayName("Simple Assertion Tests ☺♫")
+public class AssertionTests {
 
 	@Test
 	@DisplayName("assertEquals test")
@@ -25,7 +26,7 @@ public class SimpleAssertionTests {
 	}
 
 	@Test
-	@DisplayName("assertTrue test - lambda")
+	@DisplayName("assertTrue test - with λ")
 	void checkforNull() {
 		Student newStudent = SampleStudents.getNewFreshman();
 		// newStudent.addCourse(BuildTestCourses.chem408());
@@ -37,7 +38,7 @@ public class SimpleAssertionTests {
 	 * all assertions are evaluated even if one fails in the middle
 	 */
 	@Test
-	@DisplayName("grouped Assertions test")
+	@DisplayName("grouped test")
 	void groupedAssertion() {
 		Student newStudent = SampleStudents.getNewFreshman();
 		assertAll("newStudent", 
