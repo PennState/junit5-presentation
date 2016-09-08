@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestFactory;
 import org.junit.jupiter.api.function.Executable;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -19,7 +18,7 @@ import edu.psu.swe.testing.junit5.presentation.affiliates.models.Student;
 import edu.psu.swe.testing.junit5.presentation.affiliates.utilities.CourseUtils;
 
 /*
- * Tests to look for prerequisites. The various tests all test the same thing
+ * Tests to look for prerequisites. The various tests all test the same set
  * but show the differences in execution.
  */
 
@@ -27,6 +26,11 @@ public class LoopingTests {
 
 	private Student student = SampleStudents.getMaxedStudent();
 
+	/*
+	 * Simple looping through a collection and testing each condition. This test will run
+	 * until the assertion fails then will exit the method without evaluating any further
+	 * conditions.
+	 */
 	@Test
 	@DisplayName("Testing using a ForLoop")
 	public void courseAddLoopTest(){
@@ -38,19 +42,31 @@ public class LoopingTests {
 		System.out.println("End Loooping Prereq Test.");
 	}
 
+	/*
+	 * Test using a test factory. This method will generate a series of tests, one for each item
+	 * in the collection. The tests will then execute individually. A failure of any one test will
+	 * not prevent the remaining tests from being evaluated.
+	 */
 	@TestFactory
 	@DisplayName("Testing using a TestFactory")
 	public Stream<DynamicTest> courseAddTestFactoryTest(){
 		
 		System.out.println("\n\r\n\rStart Test Factory Prereq Test.");
 		
-		Stream<DynamicTest> factoryTests = student.getCourses().stream().map((c) -> DynamicTest.dynamicTest("Course: " + c.getName(), () -> assertTrue(CourseUtils.findPrereq(c) == null)));
+		Stream<DynamicTest> factoryTests = student.getCourses().stream().map((c) -> DynamicTest.dynamicTest("Course: " + c.getName(), () -> assertTrue(CourseUtils.findPrereq(c) == null, "Prerequisite requires for this course.")));
 		
 		System.out.println("End Test Factory Prereq Test.");
 		
 		return factoryTests;
 	}
 
+	
+	/*
+	 * This test shows how to use assertAll to evaluate the same collection of data. In this test,
+	 * an inner class is used to create a stream of Executable tests. In this test example, all of the 
+	 * tests are evaluated but a failure will cause the assertAll to evaluate to false and exit the 
+	 * method with no further code being executed. 
+	 */
 	@Test
 	@DisplayName("Testing using AssertAll")
 	public void courseAddAssertAllTest(){
@@ -69,5 +85,4 @@ public class LoopingTests {
 		
 		System.out.println("End assertAll Prereq Test.");
 	}
-	
 }
