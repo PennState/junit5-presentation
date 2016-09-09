@@ -282,6 +282,7 @@ a:focus {
   line-height: 1.5;
   margin-bottom:20px;
 }
+ 
 
 .slide-bulleted {
 }
@@ -310,6 +311,15 @@ a:focus {
 /*   width: 680px; */
   width: 1030px;
 }
+
+.slide-sxsimage {
+}
+
+.slide-sxsimage img {
+  height: 380px;
+  width: 511px;
+}
+
 
 .slide-section {
   

@@ -12,8 +12,8 @@
 <meta name="author" content="Steve Moyer <smoyer@psu.edu" />
 
 <link
-  href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic"
-  rel="stylesheet" />
+    href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic"
+    rel="stylesheet" />
 
 <link href="styles/javaone-junit5.css" rel="stylesheet" />
 
@@ -24,358 +24,376 @@
 <body>
 <body class="impress-not-supported">
 
-  <!--
+    <!--
     For example this fallback message is only visible when there is `impress-not-supported` class on body.
 -->
-  <div class="fallback-message">
-    <p>
-      Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified
-      version of this presentation.
-    </p>
-    <p>
-      For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.
-    </p>
-  </div>
-
-  <div id="impress">
-
-    <div id="title" class="step slide slide-title" data-x="0" data-y="0">
-      <h1><img src="images/junit5-logo.png" />JUnit 5</h1>
-      <h2>Features, Architecture and Extensibility (CON4015)</h2>
-      <p>http://bit.ly/psu-junit5-javaone</p>
+    <div class="fallback-message">
+        <p>
+            Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this
+            presentation.
+        </p>
+        <p>
+            For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.
+        </p>
     </div>
 
+    <div id="impress">
+
+        <div id="title" class="step slide slide-title" data-x="0" data-y="0">
+            <h1>
+                <img src="images/junit5-logo.png" />JUnit 5
+            </h1>
+            <h2>Features, Architecture and Extensibility (CON4015)</h2>
+            <p>http://bit.ly/psu-junit5-javaone</p>
+        </div>
+
+
+
+        <div id="bio1" class="step slide slide-bulleted" data-x="0" data-y="1000">
+            <h1>About Us</h1>
+            <ul>
+                <li>Steve Moyer</li>
+                <li>Steve Seltzer</li>
+                <li>Niraja Ramesh</li>
+            </ul>
+        </div>
+
+        <div id="bio2" class="step slide slide-bulleted" data-x="1500" data-y="1000">
+            <h1>About You</h1>
+            <h2>Automated testing?</h2>
+            <ul>
+                <li>Functional tests?</li>
+                <li>Security?</li>
+                <li>Performance/Load?</li>
+                <li>Accessibility?</li>
+            </ul>
+        </div>
+
+        <div id="survey2" class="step slide slide-bulleted" data-x="3000" data-y="1000">
+            <h1>About You</h1>
+            <h2>Process</h2>
+            <ul>
+                <li>Agile development?</li>
+                <li>Waterfall?</li>
+                <li>BDUF?</li>
+            </ul>
+        </div>
+
+        <div id="survey3" class="step slide slide-bulleted" data-x="4500" data-y="1000">
+            <h1>About You</h1>
+            <h2>Tools</h2>
+            <ul>
+                <li>Continuous Integration?</li>
+                <li>Continuous Testing?</li>
+                <li>Continuous Deployment?</li>
+                <li>Code Quality Analysis</li>
+            </ul>
+        </div>
+
+        <div id="why3" class="step slide slide-bulleted" data-x="6000" data-y="1000">
+            <h1>Penn State's AIS Work-flow</h1>
+            <ul>
+                <li>Development servers</li>
+                <li>Test servers</li>
+                <li>Acceptance servers (RC)</li>
+                <li>Production (incremental roll-out)</li>
+            </ul>
+        </div>
+
+        <div id="why4" class="step slide slide-bulleted" data-x="7500" data-y="1000">
+            <h1>Penn State's AIS - Acceptance Testing</h1>
+            <ul>
+                <li>Functional testing (Selenium2)</li>
+                <li>Security testing (OWASP/SQLMap)</li>
+                <li>Performance/Load testing (JUnitPerf/JMeter)</li>
+                <li>Accessibility testing (?)</li>
+            </ul>
+        </div>
+
+        <div id="agenda" class="step slide slide-bulleted" data-x="9000" data-y="1000">
+            <h1>Agenda</h1>
+            <ul>
+                <li>ZED Attack Proxy</li>
+                <li>SQLMap</li>
+                <li>Burp Suite</li>
+            </ul>
+        </div>
+
+
+
+    <!-- 
+    ==============================
+    =    Architecture Section    =
+    ==============================
+    -->
+        <div id="architecture-section" class="step slide slide-section" data-x="0" data-y="2000">
+            <h1>Architecture</h1>
+        </div>
+
+        <div id="code-output" class="step slide c2 slide-sxsimage" data-x="1500" data-y="2000">
+            <h1>Sample Image SxS</h1>
+            <img src="images/AssertionTest_1.png" /> <img src="images/AsserrtionTest_1_Results.png" />
+        </div>
+
+        <div id="architecture-features" class="step slide slide-bulleted" data-x="3000" data-y="2000">
+            <h1>Architecture</h1>
+            <ul>
+                <li>API
+                <li>platform engine</li>
+                <li>platform launcher</li>
+                <li>architecture diagrams</li>
+            </ul>
+        </div>
+
+        <div id="architecture-api" class="step slide slide-bulleted" data-x="4500" data-y="2000">
+            <h1>JUit5 API</h1>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+        <div id="architecture-engine" class="step slide slide-bulleted" data-x="6000" data-y="2000">
+            <h1>Engines</h1>
+            <ul>
+                <li>Vintage</li>
+                <li>Jupiter</li>
+            </ul>
+        </div>
+
+        <div id="architecture-launcher" class="step slide slide-section" data-x="7500" data-y="2000">
+            <h1>Launcher</h1>
+        </div>
+
+        <div id="architecture-diagrams" class="step slide slide-image" data-x="9000" data-y="2000">
+            <h1>Diagrams</h1>
+  
+        </div>
+
+
+   <!-- 
+    ==========================
+    =    Features Section    =
+    ==========================
+    -->
+        <div id="features-section" class="step slide slide-section" data-x="0" data-y="3000">
+            <h1>JUnit 5 New Features</h1>
+        </div>
+
+        <div id="features-api-iso" class="step slide slide-bulleted" data-x="1500" data-y="3000">
+            <h1>API Isolation</h1>
+            <ul>
+                <li>Jupiter API for writing tests/extensions</li>
+                <li>Engine API for writing new engines</li>
+            </ul>
+        </div>
+
+        <div id="feature-api-evo" class="step slide slide-bulleted" data-x="3000" data-y="3000">
+            <h1>API Evolutions</h1>
+            <ul>
+                <li>API annotations</li>
+                <li>Tooling support</li>
+            </ul>
+        </div>
+
+        <div id="feature-meta-annotation" class="step slide slide-bulleted" data-x="4500" data-y="3000">
+            <h1>Meta Annotation</h1>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+        <div id="feature-Extensions" class="step slide slide-bulleted" data-x="6000" data-y="3000">
+            <h1>Extensions</h1>
+            <ul>
+            <li></li>
+            </ul>
+        </div>
+
+  <!-- 
+    ==========================
+    =    Setup Section    =
+    ==========================
+    -->
+        <div id="setup-section" class="step slide slide-section" data-x="7500" data-y="3000">
+            <h1>Setup</h1>
+        </div>
+
+        <div id="setup-pom" class="step slide slide-bulleted" data-x="9000" data-y="3000">
+            <h1>Maven Configuration - POM</h1>
+            <ul>
+                <li>SureFire Plugin</li>
+            </ul>
+        </div>
+
+        <div id="setup-dependencies" class="step slide slide-bulleted" data-x="10500" data-y="3000">
+            <h1>Jupiter-engine</h1>
+            <ul>
+                <li>junit-platform-engine</li>
+                    Maven Artifact info here</br>
+                <li>junit-jupiter-api</li>
+                Maven Artifact info here</br>
+            </ul>
+        </div>
+
+        <div id="setup-platform-runner" class="step slide slide-bulleted" data-x="12000" data-y="3000">
+            <h1>Platform-runner (to run in eclipse IDE)</h1>
+            <ul>
+                <li>junit-platform-launcher</li>
+                <li>junit-4.12 (hamcrest-core)</li>
+            </ul>
+        </div>
+
+        <div id="sqlmap-results" class="step slide slide-image" data-x="13500" data-y="3000">
+            <h1>SQLMap Results</h1>
+            <img src="images/security/sqlmap/sqlmap-results.png" />
+        </div>
+
+        <div id="sqlmap-automation" class="step slide slide-bulleted" data-x="15000" data-y="3000">
+            <h1>SQLMap Automation</h1>
+            <ul>
+                <li>Launch via shell/console CLI</li>
+                <li>Schedule with Cron, AT, PowerShell</li>
+                <li>Load configuration options from a file</li>
+                <li>Load targets from a file</li>
+            </ul>
+        </div>
+
+
+
+       <div id="image-example" class="step slide slide-image" data-x="7500" data-y="3000">
+            <h1>Setup</h1>
+            <img src="images/PS_HOR_RGB_2C.png" />
+        </div>
+
+        <div id="burpsuite-section" class="step slide slide-section" data-x="0" data-y="4000">
+            <h1>Burp Suite</h1>
+        </div>
+
+        <div id="burpsuite-features" class="step slide slide-bulleted" data-x="1500" data-y="4000">
+            <h1>Burp Suite Features</h1>
+            <ul>
+                <li>Spider</li>
+                <li>Proxy</li>
+                <li>Inspection tools</li>
+                <li>Macros</li>
+            </ul>
+        </div>
+
+        <div id="burpsuite-pros" class="step slide slide-bulleted" data-x="3000" data-y="4000">
+            <h1>Burp Suite Pros</h1>
+            <ul>
+                <li>Macros+Proxy can handle SSO Authentication</li>
+                <li>Macros can eliminate repetitive sequences</li>
+            </ul>
+        </div>
+
+        <div id="burpsuite-cons" class="step slide slide-bulleted" data-x="4500" data-y="4000">
+            <h1>Burp Suite Cons</h1>
+            <ul>
+                <li>Automated attacks are part of the Pro (paid) version</li>
+                <li>Save and restore are part of the Pro (paid) version</li>
+            </ul>
+        </div>
+
+        <div id="burpsuite-demo" class="step slide slide-section" data-x="6000" data-y="4000">
+            <h1>Demo</h1>
+        </div>
+
+        <div id="burpsuite-automation" class="step slide slide-bulleted" data-x="7500" data-y="4000">
+            <h1>Burp Suite Automation</h1>
+            <ul>
+                <li>None (See Pro version)</li>
+            </ul>
+        </div>
 
 
 
 
-    <div id="bio" class="step slide slide-bulleted" data-x="0" data-y="1000">
-      <h1>About Me</h1>
-      <ul>
-        <li>Steve Moyer</li>
-        <li>Currently - Enterprise Software Architect - AIS/ITS/PSU</li>
-        <li>Past - CTO, Start-up founder, Principal Systems Architect</li>
-        <li>Happily married with four kids</li>
-      </ul>
+
+        <div id="additional-section" class="step slide slide-section" data-x="0" data-y="5000">
+            <h1>Additional Tools</h1>
+        </div>
+
+        <div id="additional-Java" class="step slide slide-bulleted" data-x="1500" data-y="5000">
+            <h1>Java Tools</h1>
+            <ul>
+                <li>FindBugs Security Plugin</li>
+                <li>SonarQube OWASP Plugin</li>
+            </ul>
+        </div>
+
+        <div id="additional-commercial" class="step slide slide-bulleted" data-x="3000" data-y="5000">
+            <h1>Commercial Tools</h1>
+            <ul>
+                <li>Burp Suite Pro</li>
+                <li>Security Center/Nessus</li>
+                <li>Hailstorm</li>
+            </ul>
+        </div>
+
+        <div id="questions" class="step slide slide-section" data-x="4500" data-y="5000">
+            <h1>Questions</h1>
+        </div>
+
+        <div id="contact" class="step slide slide-bulleted" data-x="6000" data-y="5000">
+            <h1>Contact Information</h1>
+            <ul>
+                <li>smoyer@psu.edu</li>
+                <li>smoyer64 on GitHub</li>
+                <li>swm16@chat.psu.edu (XMPP Chat)</li>
+                <li><a
+                    href="https://htmlpreview.github.io/?https://github.com/selesy/web-testing-presentations/blob/master/src/site/resources/security-web-testing.html#/title">This
+                        presentation</a></li>
+                <li>http://bit.ly/1U6Zx8M</li>
+            </ul>
+        </div>
+
+        <div id="references-1" class="step slide slide-bulleted" data-x="7500" data-y="5000">
+            <h1>References</h1>
+            <ul>
+                <li><a href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project">ZED Attack Proxy</a></li>
+                <li><a href="http://sqlmap.org/">SQLMap</a></li>
+                <li><a href="https://portswigger.net/">Burp Suite</a></li>
+            </ul>
+        </div>
+
+        <div id="references-2" class="step slide slide-bulleted" data-x="9000" data-y="5000">
+            <h1>References (continued)</h1>
+            <ul>
+                <li><a href="http://findbugs.sourceforge.net/findbugs2.html#plugins">FindBugs</a></li>
+                <li><a href="https://find-sec-bugs.github.io/">FindBugs Security Plugin</a></li>
+                <li><a href="https://www.owasp.org/index.php/OWASP_SonarQube_Project">OWASP SonarQube Project</a></li>
+                <li><a href="http://www.tenable.com/products/securitycenter">Security Center/Nessus</a></li>
+                <li><a href="https://www.trustwave.com/Products/Application-Security/App-Scanner-Family/">Hailstorm</a></li>
+                <li><a href="https://portswigger.net/buy/">Burp Suite Pro</a></li>
+            </ul>
+        </div>
+
+
+
+
+
+        <div id="all" class="step" data-x="7500" data-y="500" data-scale="15"></div>
+        <div id="big-logo">
+            <img src="images/PS_HOR_RGB_2C.png" />
+        </div>
     </div>
 
-    <div id="survey1" class="step slide slide-bulleted" data-x="1500" data-y="1000">
-      <h1>About You</h1>
-      <h2>Automated testing?</h2>
-      <ul>
-        <li>Functional tests?</li>
-        <li>Security?</li>
-        <li>Performance/Load?</li>
-        <li>Accessibility?</li>
-      </ul>
-    </div>
-
-    <div id="survey2" class="step slide slide-bulleted" data-x="3000" data-y="1000">
-      <h1>About You</h1>
-      <h2>Process</h2>
-      <ul>
-        <li>Agile development?</li>
-        <li>Waterfall?</li>
-        <li>BDUF?</li>
-      </ul>
-    </div>
-
-    <div id="survey3" class="step slide slide-bulleted" data-x="4500" data-y="1000">
-      <h1>About You</h1>
-      <h2>Tools</h2>
-      <ul>
-        <li>Continuous Integration?</li>
-        <li>Continuous Testing?</li>
-        <li>Continuous Deployment?</li>
-        <li>Code Quality Analysis</li>
-      </ul>
-    </div>
-
-    <div id="why3" class="step slide slide-bulleted" data-x="6000" data-y="1000">
-      <h1>Penn State's AIS Work-flow</h1>
-      <ul>
-        <li>Development servers</li>
-        <li>Test servers</li>
-        <li>Acceptance servers (RC)</li>
-        <li>Production (incremental roll-out)</li>
-      </ul>
-    </div>
-
-    <div id="why4" class="step slide slide-bulleted" data-x="7500" data-y="1000">
-      <h1>Penn State's AIS - Acceptance Testing</h1>
-      <ul>
-        <li>Functional testing (Selenium2)</li>
-        <li>Security testing (OWASP/SQLMap)</li>
-        <li>Performance/Load testing (JUnitPerf/JMeter)</li>
-        <li>Accessibility testing (?)</li>
-      </ul>
-    </div>
-
-    <div id="agenda" class="step slide slide-bulleted" data-x="9000" data-y="1000">
-      <h1>Agenda</h1>
-      <ul>
-        <li>ZED Attack Proxy</li>
-        <li>SQLMap</li>
-        <li>Burp Suite</li>
-      </ul>
-    </div>
-
-
-
-
-
-    <div id="zaproxy-section" class="step slide slide-section" data-x="0" data-y="2000">
-      <h1>OWASP Zed Attack Proxy</h1>
-    </div>
-
-    <div id="zaproxy-features" class="step slide slide-bulleted" data-x="1500" data-y="2000">
-      <h1>ZAProxy Features</h1>
-      <ul>
-        <li>Spider and manual URL discovery</li>
-        <li>Proxy for browser-based exploration</li>
-        <li>Per page scanning</li>
-        <li>Reporting by severity and URL</li>
-      </ul>
-    </div>
-
-    <div id="zaproxy-pros" class="step slide slide-bulleted" data-x="3000" data-y="2000">
-      <h1>ZAProxy Pros</h1>
-      <ul>
-        <li>Finds problems outlined by OWASP Top Ten</li>
-        <li>Security scanning can be saved and replayed</li>
-        <li>Add-ons</li>
-        <li>Templates</li>
-        <li>Huge ecosystem of developers in an active community</li>
-      </ul>
-    </div>
-
-    <div id="zaproxy-cons" class="step slide slide-bulleted" data-x="4500" data-y="2000">
-      <h1>ZAProxy Cons</h1>
-      <ul>
-        <li>Printable reports</li>
-        <li>Authentication with SSO</li>
-        <li>Authentication with second factor</li>
-      </ul>
-    </div>
-    
-    <div id="zaproxy-demo" class="step slide slide-section" data-x="6000" data-y="2000">
-      <h1>Demo</h1>
-    </div>
-
-    <div id="zaproxy-automation" class="step slide slide-bulleted" data-x="7500" data-y="2000">
-      <h1>ZAProxy Automation</h1>
-      <ul>
-        <li>Headless mode</li>
-        <li>REST API via internal server</li>
-        <li>CLI (cURL) or continuous integration</li>
-        <li>Replay saved test profiles</li>
-      </ul>
-    </div>
-
-
-
-
-
-    <div id="sqlmap-section" class="step slide slide-section" data-x="0" data-y="3000">
-      <h1>SQLMap</h1>
-    </div>
-
-    <div id="sqlmap-features" class="step slide slide-bulleted" data-x="1500" data-y="3000">
-      <h1>SQLMap Features</h1>
-      <ul>
-        <li>Support for many RDBMS databases</li>
-        <li>Tries multiple SQL injection techniques</li>
-        <li>Database content dumping</li>
-        <li>Tests database password strength</li>
-        <li>Query parameters or forms</li>
-      </ul>
-    </div>
-
-    <div id="sqlmap-pros" class="step slide slide-bulleted" data-x="3000" data-y="3000">
-      <h1>SQLMap Pros</h1>
-      <ul>
-        <li>Highly configurable</li>
-        <li>Huge number of functions</li>
-        <li>Can also directly test database security</li>
-        <li>Free and maintained</li>
-      </ul>
-    </div>
-
-    <div id="sqlmap-cons" class="step slide slide-bulleted" data-x="4500" data-y="3000">
-      <h1>SQLMap Cons</h1>
-      <ul>
-        <li>"[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal.
-          It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no
-          liability and are not responsible for any misuse or damage caused by this program"</li>
-        <li>Can be very slow</li>
-        <li>Authentication with SSO and/or second factor</li>
-      </ul>
-    </div>
-
-    <div id="sqlmap-demo" class="step slide slide-section" data-x="6000" data-y="3000">
-      <h1>Non-demo</h1>
-    </div>
-
-    <div id="sqlmap-command" class="step slide slide-image" data-x="7500" data-y="3000">
-      <h1>SQLMap Command</h1>
-      <img src="images/security/sqlmap/sqlmap-command.png" />
-    </div>
-
-    <div id="sqlmap-fields" class="step slide slide-image" data-x="9000" data-y="3000">
-      <h1>SQLMap Fields</h1>
-      <img src="images/security/sqlmap/sqlmap-fields.png" />
-    </div>
-
-    <div id="sqlmap-output1" class="step slide slide-image" data-x="10500" data-y="3000">
-      <h1>SQLMap Output</h1>
-      <img src="images/security/sqlmap/sqlmap-output1.png" />
-    </div>
-
-    <div id="sqlmap-output2" class="step slide slide-image" data-x="12000" data-y="3000">
-      <h1>SQLMap Output</h1>
-      <img src="images/security/sqlmap/sqlmap-output2.png" />
-    </div>
-
-    <div id="sqlmap-results" class="step slide slide-image" data-x="13500" data-y="3000">
-      <h1>SQLMap Results</h1>
-      <img src="images/security/sqlmap/sqlmap-results.png" />
-    </div>
-
-    <div id="sqlmap-automation" class="step slide slide-bulleted" data-x="15000" data-y="3000">
-      <h1>SQLMap Automation</h1>
-      <ul>
-        <li>Launch via shell/console CLI</li>
-        <li>Schedule with Cron, AT, PowerShell</li>
-        <li>Load configuration options from a file</li>
-        <li>Load targets from a file</li>
-      </ul>
-    </div>
-
-
-
-
-
-    <div id="burpsuite-section" class="step slide slide-section" data-x="0" data-y="4000">
-      <h1>Burp Suite</h1>
-    </div>
-
-    <div id="burpsuite-features" class="step slide slide-bulleted" data-x="1500" data-y="4000">
-      <h1>Burp Suite Features</h1>
-      <ul>
-        <li>Spider</li>
-        <li>Proxy</li>
-        <li>Inspection tools</li>
-        <li>Macros</li>
-      </ul>
-    </div>
-
-    <div id="burpsuite-pros" class="step slide slide-bulleted" data-x="3000" data-y="4000">
-      <h1>Burp Suite Pros</h1>
-      <ul>
-        <li>Macros+Proxy can handle SSO Authentication</li>
-        <li>Macros can eliminate repetitive sequences</li>
-      </ul>
-    </div>
-
-    <div id="burpsuite-cons" class="step slide slide-bulleted" data-x="4500" data-y="4000">
-      <h1>Burp Suite Cons</h1>
-      <ul>
-        <li>Automated attacks are part of the Pro (paid) version</li>
-        <li>Save and restore are part of the Pro (paid) version</li>
-      </ul>
-    </div>
-    
-    <div id="burpsuite-demo" class="step slide slide-section" data-x="6000" data-y="4000">
-      <h1>Demo</h1>
-    </div>
-
-    <div id="burpsuite-automation" class="step slide slide-bulleted" data-x="7500" data-y="4000">
-      <h1>Burp Suite Automation</h1>
-      <ul>
-        <li>None (See Pro version)</li>
-      </ul>
-    </div>
-
-
-
-
-
-    <div id="additional-section" class="step slide slide-section" data-x="0" data-y="5000">
-      <h1>Additional Tools</h1>
-    </div>
-
-    <div id="additional-Java" class="step slide slide-bulleted" data-x="1500" data-y="5000">
-      <h1>Java Tools</h1>
-      <ul>
-        <li>FindBugs Security Plugin</li>
-        <li>SonarQube OWASP Plugin</li>
-      </ul>
-    </div>
-
-    <div id="additional-commercial" class="step slide slide-bulleted" data-x="3000" data-y="5000">
-      <h1>Commercial Tools</h1>
-      <ul>
-        <li>Burp Suite Pro</li>
-        <li>Security Center/Nessus</li>
-        <li>Hailstorm</li>
-      </ul>
-    </div>
-
-    <div id="questions" class="step slide slide-section" data-x="4500" data-y="5000">
-      <h1>Questions</h1>
-    </div>
-
-    <div id="contact" class="step slide slide-bulleted" data-x="6000" data-y="5000">
-      <h1>Contact Information</h1>
-      <ul>
-        <li>smoyer@psu.edu</li>
-        <li>smoyer64 on GitHub</li>
-        <li>swm16@chat.psu.edu (XMPP Chat)</li>
-        <li><a href="https://htmlpreview.github.io/?https://github.com/selesy/web-testing-presentations/blob/master/src/site/resources/security-web-testing.html#/title">This presentation</a></li>
-        <li>http://bit.ly/1U6Zx8M</li>
-      </ul>
-    </div>
-
-    <div id="references-1" class="step slide slide-bulleted" data-x="7500" data-y="5000">
-      <h1>References</h1>
-      <ul>
-        <li><a href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project">ZED Attack Proxy</a></li>
-        <li><a href="http://sqlmap.org/">SQLMap</a></li>
-        <li><a href="https://portswigger.net/">Burp Suite</a></li>
-      </ul>
-    </div>
-
-    <div id="references-2" class="step slide slide-bulleted" data-x="9000" data-y="5000">
-      <h1>References (continued)</h1>
-      <ul>
-        <li><a href="http://findbugs.sourceforge.net/findbugs2.html#plugins">FindBugs</a></li>
-        <li><a href="https://find-sec-bugs.github.io/">FindBugs Security Plugin</a></li>
-        <li><a href="https://www.owasp.org/index.php/OWASP_SonarQube_Project">OWASP SonarQube Project</a></li>
-        <li><a href="http://www.tenable.com/products/securitycenter">Security Center/Nessus</a></li>
-        <li><a href="https://www.trustwave.com/Products/Application-Security/App-Scanner-Family/">Hailstorm</a></li>
-        <li><a href="https://portswigger.net/buy/">Burp Suite Pro</a></li>
-      </ul>
-    </div>
-
-
-
-
-
-    <div id="all" class="step" data-x="7500" data-y="500" data-scale="15"></div>
-    <div id="big-logo">
-      <img src="images/PS_HOR_RGB_2C.png" />
-    </div>
-  </div>
-
-  <script src="scripts/impress.js"></script>
-  <script>
+    <script src="scripts/impress.js"></script>
+    <script>
 			impress().init();
 		</script>
 
-  <!--   <div id="footer"> -->
-  <!--     <div>Functional Web Testing with Selenium 2</div> -->
-  <!--     <div id="group">Software Engineering - Administrative Information Services - Information Technology Services</div> -->
-  <!--   </div> -->
+    <!--   <div id="footer"> -->
+    <!--     <div>Functional Web Testing with Selenium 2</div> -->
+    <!--     <div id="group">Software Engineering - Administrative Information Services - Information Technology Services</div> -->
+    <!--   </div> -->
 
 </body>
 
