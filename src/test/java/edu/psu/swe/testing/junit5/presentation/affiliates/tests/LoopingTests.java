@@ -37,7 +37,8 @@ public class LoopingTests {
 		List<Course> courses = student.getCourses();
 		System.out.println("\n\r\n\rStart Looping Prereq Test.");
 		for (Course currCourse : courses){
-			assertTrue(CourseUtils.findPrereq(currCourse) == null, "Course requires prerequisite.");
+			assertTrue(CourseUtils.findPrereq(currCourse) == null,
+			    "Course requires prerequisite.");
 		}
 		System.out.println("End Loooping Prereq Test.");
 	}
