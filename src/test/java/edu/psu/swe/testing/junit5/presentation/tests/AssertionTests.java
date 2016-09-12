@@ -16,7 +16,7 @@ public class AssertionTests {
 	@Test
 	@DisplayName("assertEquals test")
 	void checkStudentLastName() {
-		assertEquals("Builder", SampleStudents.getFullTimeStudent().getLastName());
+		assertEquals("Builder", SampleStudents.getFullTimeStudent().getLastName(), "not Bob");
 	}
 
 	@Test
