@@ -53,7 +53,9 @@ public class LoopingTests {
 
 		System.out.println("\n\r\n\rStart Test Factory Prereq Test.");
 
-		Stream<DynamicTest> factoryTests = student.getCourses().stream().map((c) -> DynamicTest.dynamicTest("Course: " + c.getName(), () -> assertTrue(CourseUtils.findPrereq(c) == null, "Prerequisite requires for this course.")));
+		Stream<DynamicTest> factoryTests = student.getCourses().stream().map((c) -> 
+		  DynamicTest.dynamicTest("Course: " + c.getName(), () -> 
+		  assertTrue(CourseUtils.findPrereq(c) == null, "Prerequisite requires for this course.")));
 
 		System.out.println("End Test Factory Prereq Test.");
 
