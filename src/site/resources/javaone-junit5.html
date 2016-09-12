@@ -48,7 +48,6 @@
         </div>
 
 
-
         <div id="bio1" class="step slide slide-bulleted" data-x="0" data-y="1000">
             <h1>About Us</h1>
             <ul>
@@ -220,28 +219,30 @@
     =    Setup Section    =
     ==========================
     -->
-        <div id="setup-section" class="step slide slide-section" data-x="7500" data-y="3000">
+        <div id="setup-section" class="step slide slide-section" data-x="0" data-y="4000">
             <h1>Setup</h1>
         </div>
 
-        <div id="setup-pom" class="step slide slide-bulleted" data-x="9000" data-y="3000">
+        <div id="setup-pom" class="step slide slide-bulleted" data-x="1500" data-y="4000">
             <h1>Maven Configuration - POM</h1>
             <ul>
                 <li>SureFire Plugin</li>
             </ul>
         </div>
 
-        <div id="setup-dependencies" class="step slide slide-bulleted" data-x="10500" data-y="3000">
+        <div id="setup-dependencies" class="step slide slide-bulleted" data-x="3000" data-y="4000">
             <h1>Jupiter-engine</h1>
             <ul>
                 <li>junit-platform-engine</li>
-                    Maven Artifact info here</br>
+                <element>Maven Artifact info here</element>
+                </br>
                 <li>junit-jupiter-api</li>
-                Maven Artifact info here</br>
+                <element>Maven Artifact info here</element>
+                </br>
             </ul>
         </div>
 
-        <div id="setup-platform-runner" class="step slide slide-bulleted" data-x="12000" data-y="3000">
+        <div id="setup-platform-runner" class="step slide slide-bulleted" data-x="4500" data-y="4000">
             <h1>Platform-runner (to run in eclipse IDE)</h1>
             <ul>
                 <li>junit-platform-launcher</li>
@@ -249,33 +250,98 @@
             </ul>
         </div>
 
-        <div id="sqlmap-results" class="step slide slide-image" data-x="13500" data-y="3000">
-            <h1>SQLMap Results</h1>
-            <img src="images/security/sqlmap/sqlmap-results.png" />
-        </div>
 
-        <div id="sqlmap-automation" class="step slide slide-bulleted" data-x="15000" data-y="3000">
-            <h1>SQLMap Automation</h1>
+  <!-- 
+    ==========================
+    =    Tests Section    =
+    ==========================
+    -->
+            <div id="test-section" class="step slide slide-section" data-x="0" data-y="5000">
+            <h1>Writing Tests</h1>
+        </div>
+    
+          <div id="test-agenda" class="step slide slide-bulleted" data-x="1500" data-y="5000">
+            <h1>Tests</h1>
             <ul>
-                <li>Launch via shell/console CLI</li>
-                <li>Schedule with Cron, AT, PowerShell</li>
-                <li>Load configuration options from a file</li>
-                <li>Load targets from a file</li>
+                <li>Assertion tests</li>
+                <li>Assumption tests</li>
+                <li>Exception tests</li>
+                <li>Nested tests</li>
+                <li>Looping tests (Group tests?)</li>
+                <li>Dynamic tests</li>
+                <li>Tags? - meta annotation</li>
+                <li>Interface???</li>
+            </ul>
+        </div>
+        
+        <div id="test-assert1" class="step slide slide-bulleted" data-x="3000" data-y="5000">
+            <h1>Assertions</h1>
+            <ul>
+                <li>assertEquals</li>
+                <li>assertTrue</li>
+                <li>assertFalse</li>
+                <li>assertNull</li>
+                <li>assertAll</li>
             </ul>
         </div>
 
-
-
-       <div id="image-example" class="step slide slide-image" data-x="7500" data-y="3000">
-            <h1>Setup</h1>
-            <img src="images/PS_HOR_RGB_2C.png" />
+        <div id="tests-assert-code" class="step slide slide-image" data-x="4500" data-y="5000">
+            <h1>Assert Test Code</h1>
+			<img src="images/AssertionTest_1.png"/>
         </div>
 
-        <div id="burpsuite-section" class="step slide slide-section" data-x="0" data-y="4000">
-            <h1>Burp Suite</h1>
+        <div id="tests-assert-result" class="step slide slide-image" data-x="6000" data-y="5000">
+            <h1>Assert Test Results</h1>
+			<img src="images/AsserrtionTest_1_Results.png"/>
+        </div>
+        
+        <div id="tests-assumption" class="step slide slide-bulleted" data-x="7500" data-y="5000">
+            <h1>Assumptions</h1>
+            <ul>
+                <li>AssumeTrue</li>
+                <li>AssumeFalse</li>
+                <li>AssumingThat</li>
+            </ul>
         </div>
 
-        <div id="burpsuite-features" class="step slide slide-bulleted" data-x="1500" data-y="4000">
+        <div id="tests-assumption-code" class="step slide slide-image" data-x="9000" data-y="5000">
+            <h1>Assumption Test Code</h1>
+            <img src="images/AssertionTest_1.png"/>
+        </div>
+
+        <div id="tests-assumption-result" class="step slide slide-image" data-x="10500" data-y="5000">
+            <h1>Assumption Test Results</h1>
+            <img src="images/AsserrtionTest_1_Results.png"/>
+        </div>
+
+
+        <div id="tests-exception-code" class="step slide slide-image" data-x="12000" data-y="5000">
+            <h1>Exception Test Code</h1>
+            <img src="images/AssertionTest_1.png"/>
+        </div>
+
+        <div id="tests-exception-result" class="step slide slide-image" data-x="13500" data-y="5000">
+            <h1>Exception Test Results</h1>
+            <img src="images/AsserrtionTest_1_Results.png"/>
+        </div>
+
+        <div id="tests-looping-code" class="step slide slide-image" data-x="15000" data-y="5000">
+            <h1>Looping Tests Code</h1>
+            <img src="images/AssertionTest_1.png"/>
+        </div>
+
+  
+  <!-- 
+    ===============================
+    =    Extensibility Section    =
+    ===============================
+    -->
+       <div id="extensibility-section" class="step slide slide-section" data-x="0" data-y="6000">
+            <h1>Extensibility</h1>
+        </div>
+
+
+          <div id="burpsuite-features" class="step slide slide-bulleted" data-x="1500" data-y="6000">
             <h1>Burp Suite Features</h1>
             <ul>
                 <li>Spider</li>
@@ -285,7 +351,7 @@
             </ul>
         </div>
 
-        <div id="burpsuite-pros" class="step slide slide-bulleted" data-x="3000" data-y="4000">
+        <div id="burpsuite-pros" class="step slide slide-bulleted" data-x="3000" data-y="6000">
             <h1>Burp Suite Pros</h1>
             <ul>
                 <li>Macros+Proxy can handle SSO Authentication</li>
@@ -293,7 +359,7 @@
             </ul>
         </div>
 
-        <div id="burpsuite-cons" class="step slide slide-bulleted" data-x="4500" data-y="4000">
+        <div id="burpsuite-cons" class="step slide slide-bulleted" data-x="4500" data-y="6000">
             <h1>Burp Suite Cons</h1>
             <ul>
                 <li>Automated attacks are part of the Pro (paid) version</li>
@@ -301,11 +367,11 @@
             </ul>
         </div>
 
-        <div id="burpsuite-demo" class="step slide slide-section" data-x="6000" data-y="4000">
+        <div id="burpsuite-demo" class="step slide slide-section" data-x="6000" data-y="6000">
             <h1>Demo</h1>
         </div>
 
-        <div id="burpsuite-automation" class="step slide slide-bulleted" data-x="7500" data-y="4000">
+        <div id="burpsuite-automation" class="step slide slide-bulleted" data-x="7500" data-y="6000">
             <h1>Burp Suite Automation</h1>
             <ul>
                 <li>None (See Pro version)</li>
@@ -316,11 +382,11 @@
 
 
 
-        <div id="additional-section" class="step slide slide-section" data-x="0" data-y="5000">
+        <div id="additional-section" class="step slide slide-section" data-x="0" data-y="7000">
             <h1>Additional Tools</h1>
         </div>
 
-        <div id="additional-Java" class="step slide slide-bulleted" data-x="1500" data-y="5000">
+        <div id="additional-Java" class="step slide slide-bulleted" data-x="1500" data-y="7000">
             <h1>Java Tools</h1>
             <ul>
                 <li>FindBugs Security Plugin</li>
@@ -328,7 +394,7 @@
             </ul>
         </div>
 
-        <div id="additional-commercial" class="step slide slide-bulleted" data-x="3000" data-y="5000">
+        <div id="additional-commercial" class="step slide slide-bulleted" data-x="3000" data-y="7000">
             <h1>Commercial Tools</h1>
             <ul>
                 <li>Burp Suite Pro</li>
@@ -337,11 +403,11 @@
             </ul>
         </div>
 
-        <div id="questions" class="step slide slide-section" data-x="4500" data-y="5000">
+        <div id="questions" class="step slide slide-section" data-x="4500" data-y="7000">
             <h1>Questions</h1>
         </div>
 
-        <div id="contact" class="step slide slide-bulleted" data-x="6000" data-y="5000">
+        <div id="contact" class="step slide slide-bulleted" data-x="6000" data-y="7000">
             <h1>Contact Information</h1>
             <ul>
                 <li>smoyer@psu.edu</li>
@@ -354,7 +420,7 @@
             </ul>
         </div>
 
-        <div id="references-1" class="step slide slide-bulleted" data-x="7500" data-y="5000">
+        <div id="references-1" class="step slide slide-bulleted" data-x="7500" data-y="7000">
             <h1>References</h1>
             <ul>
                 <li><a href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project">ZED Attack Proxy</a></li>
@@ -363,7 +429,7 @@
             </ul>
         </div>
 
-        <div id="references-2" class="step slide slide-bulleted" data-x="9000" data-y="5000">
+        <div id="references-2" class="step slide slide-bulleted" data-x="9000" data-y="7000">
             <h1>References (continued)</h1>
             <ul>
                 <li><a href="http://findbugs.sourceforge.net/findbugs2.html#plugins">FindBugs</a></li>
