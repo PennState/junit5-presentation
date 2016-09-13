@@ -8,10 +8,10 @@ import static org.junit.jupiter.api.Assertions.expectThrows;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import edu.psu.swe.testing.junit5.presentation.affiliates.models.Student;
 import edu.psu.swe.testing.junit5.presentation.supportingcode.BuildTestCourses;
 import edu.psu.swe.testing.junit5.presentation.supportingcode.CourseUtils;
 import edu.psu.swe.testing.junit5.presentation.supportingcode.SampleStudents;
+import edu.psu.swe.testing.junit5.presentation.supportingcode.affiliates.models.Student;
 
 /*
  * This class provides examples of how to use assertThrows and

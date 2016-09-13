@@ -3,8 +3,8 @@ package edu.psu.swe.testing.junit5.presentation.supportingcode;
 import java.util.List;
 import java.util.stream.Stream;
 
-import edu.psu.swe.testing.junit5.presentation.affiliates.models.Course;
-import edu.psu.swe.testing.junit5.presentation.affiliates.models.Student;
+import edu.psu.swe.testing.junit5.presentation.supportingcode.affiliates.models.Course;
+import edu.psu.swe.testing.junit5.presentation.supportingcode.affiliates.models.Student;
 
 /*
  * CourseUtils - Utility class to provide methods for registering students for courses.

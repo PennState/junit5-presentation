@@ -14,9 +14,9 @@ import org.junit.jupiter.api.function.Executable;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertNull;
-import edu.psu.swe.testing.junit5.presentation.affiliates.models.Course;
-import edu.psu.swe.testing.junit5.presentation.affiliates.models.Student;
 import edu.psu.swe.testing.junit5.presentation.supportingcode.CourseUtils;
+import edu.psu.swe.testing.junit5.presentation.supportingcode.affiliates.models.Course;
+import edu.psu.swe.testing.junit5.presentation.supportingcode.affiliates.models.Student;
 
 /*
  * Tests to look for prerequisites. The various tests all test the same set

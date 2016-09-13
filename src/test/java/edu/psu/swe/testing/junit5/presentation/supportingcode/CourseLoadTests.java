@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import edu.psu.swe.testing.junit5.presentation.affiliates.models.Student;
+import edu.psu.swe.testing.junit5.presentation.supportingcode.affiliates.models.Student;
 
 public class CourseLoadTests {
 

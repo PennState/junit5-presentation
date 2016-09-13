@@ -1,4 +1,4 @@
-package edu.psu.swe.testing.junit5.presentation.affiliates.models;
+package edu.psu.swe.testing.junit5.presentation.supportingcode.affiliates.models;
 
 import java.util.ArrayList;
 import java.util.List;
