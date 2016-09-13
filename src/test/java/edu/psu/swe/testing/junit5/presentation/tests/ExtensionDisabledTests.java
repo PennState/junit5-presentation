@@ -21,7 +21,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 public class ExtensionDisabledTests {
 
 	/*
-	 * Extension class enables the test and Assumptions passes to run the test
+	 * Extension class enables the test and Assumption passes to run the test
 	 */
 	@Test
 	public void checkStudentAffiliate(TestInfo testInfo) {
