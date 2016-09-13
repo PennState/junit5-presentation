@@ -48,7 +48,7 @@ public class ExceptionTests {
 	 * limits.
 	 */
 	@Test
-	@DisplayName("assertThrows-test")
+	@DisplayName("assertThrows test")
 	void registerCourseTest1() {
 		Student student = SampleStudents.getNewFreshman();
 
@@ -71,7 +71,7 @@ public class ExceptionTests {
 	 * examines the thrown exception when student registers over credit limits.
 	 */
 	@Test
-	@DisplayName("expectThrows-test")
+	@DisplayName("expectThrows test")
 	void registerCourseTest2() {
 		Student student = SampleStudents.getNewFreshman();
 
