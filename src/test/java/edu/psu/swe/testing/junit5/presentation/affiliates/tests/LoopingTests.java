@@ -64,6 +64,30 @@ public class LoopingTests {
 	}
 
 
+
+	/*
+	 * AssertAll can be used by explicitly creating tests for each condition
+	 * individually. This is the verbose form of the dynamic form above and is equivalent.
+	 */
+	@Test
+	@DisplayName("AssertAll Verbose Form")
+	public void courseAssertAllVerbose(){
+		System.out.println("\n\r\n\rStart assertAll Verbose Prereq Test.");	
+
+		assertAll("course",
+				() -> assertNull(CourseUtils.findPrereq(BuildTestCourses.engl213())),
+				() -> assertNull(CourseUtils.findPrereq(BuildTestCourses.math220())),
+				() -> assertNull(CourseUtils.findPrereq(BuildTestCourses.stat401())),
+				() -> assertNull(CourseUtils.findPrereq(BuildTestCourses.chem408())),
+				() -> assertNull(CourseUtils.findPrereq(BuildTestCourses.insc480())),
+				() -> assertNull(CourseUtils.findPrereq(BuildTestCourses.emech210())),
+				() -> assertNull(CourseUtils.findPrereq(BuildTestCourses.span200())),
+				() -> assertNull(CourseUtils.findPrereq(BuildTestCourses.music421()))
+				);
+
+		System.out.println("End assertAll Prereq Test.");
+	}
+	
 	/*
 	 * This test shows how to use assertAll to evaluate the same collection of data. In this test,
 	 * an inner class is used to create a stream of Executable tests. In this test example, all of the 
@@ -85,30 +109,6 @@ public class LoopingTests {
 				})
 				.collect(Collectors.toList())
 				.toArray(new Executable[0]));
-
-		System.out.println("End assertAll Prereq Test.");
-	}
-
-
-	/*
-	 * Finally showing AssertAll by explicitly creating tests for each condition
-	 * individually. This is the verbose form of the dynamic form above and is equivalent.
-	 */
-	@Test
-	@DisplayName("AssertAll Verbose Form")
-	public void courseAssertAllVerbose(){
-		System.out.println("\n\r\n\rStart assertAll Verbose Prereq Test.");	
-
-		assertAll("course",
-				() -> assertNull(CourseUtils.findPrereq(BuildTestCourses.engl213())),
-				() -> assertNull(CourseUtils.findPrereq(BuildTestCourses.math220())),
-				() -> assertNull(CourseUtils.findPrereq(BuildTestCourses.stat401())),
-				() -> assertNull(CourseUtils.findPrereq(BuildTestCourses.chem408())),
-				() -> assertNull(CourseUtils.findPrereq(BuildTestCourses.insc480())),
-				() -> assertNull(CourseUtils.findPrereq(BuildTestCourses.emech210())),
-				() -> assertNull(CourseUtils.findPrereq(BuildTestCourses.span200())),
-				() -> assertNull(CourseUtils.findPrereq(BuildTestCourses.music421()))
-				);
 
 		System.out.println("End assertAll Prereq Test.");
 	}
