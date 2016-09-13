@@ -2,11 +2,9 @@ package edu.psu.swe.testing.junit5.presentation;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-@Disabled
 @ExtendWith(SuiteTiming.class)
 public class FakeSuiteTests {
   
