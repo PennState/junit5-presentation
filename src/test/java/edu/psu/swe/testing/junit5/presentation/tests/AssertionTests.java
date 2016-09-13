@@ -8,7 +8,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import edu.psu.swe.testing.junit5.presentation.affiliates.models.Student;
-import edu.psu.swe.testing.junit5.presentation.affiliates.tests.SampleStudents;
+import edu.psu.swe.testing.junit5.presentation.supportingcode.SampleStudents;
 
 @DisplayName("Simple Assertion Tests ☺♫")
 public class AssertionTests {

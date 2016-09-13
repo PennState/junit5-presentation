@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import edu.psu.swe.testing.junit5.presentation.affiliates.models.Affilliate;
 import edu.psu.swe.testing.junit5.presentation.affiliates.models.Staff;
 import edu.psu.swe.testing.junit5.presentation.affiliates.models.Student;
-import edu.psu.swe.testing.junit5.presentation.affiliates.tests.BuildTestCourses;
+import edu.psu.swe.testing.junit5.presentation.supportingcode.BuildTestCourses;
 
 public class AssumptionTests {
 
