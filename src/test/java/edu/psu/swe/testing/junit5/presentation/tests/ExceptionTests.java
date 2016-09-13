@@ -25,30 +25,33 @@ public class ExceptionTests {
 	CourseUtils courseUtils = new CourseUtils();
 
 	/*
-	 * Register a student for classes. After the requested courses have been
-	 * added, check that the student hasn't exceeded the allowed course load.
-	 * This test is designed to fail because the addCourse function is checking
-	 * the course load and will throw an exception when the student attempts to 
-	 * exceed limits. The subsequent tests will show how to expect this exception.
+	 * Register a student for classes. If the student attempts to add more credit hours
+	 * than is permitted, the registerForCourse method will throw an exception. 
+	 * Catch the exception and check the type. This is the JUnit 4 way of handling
+	 * the exception.
 	 */
 	@Test
 	@DisplayName("register-course-assertion-test")
 	public void addCourseTest() {
-		Student student = SampleStudents.getNewFreshman();
+	  Student student = SampleStudents.getNewFreshman();
 
-		student.addCourse(BuildTestCourses.emech210());
-		student.addCourse(BuildTestCourses.engl213());
-		student.addCourse(BuildTestCourses.math220());
-		student.addCourse(BuildTestCourses.stat401());
-		student.addCourse(BuildTestCourses.chem408());
-		student.addCourse(BuildTestCourses.insc480());
-		student.addCourse(BuildTestCourses.emech210());
-		student.addCourse(BuildTestCourses.span200());
-		student.addCourse(BuildTestCourses.music421());
-		student.addCourse(BuildTestCourses.emech211());
+	  try {
+	    courseUtils.registerForCourse(student, BuildTestCourses.engl213());
+	    courseUtils.registerForCourse(student, BuildTestCourses.math220());
+	    courseUtils.registerForCourse(student, BuildTestCourses.stat401());
+	    courseUtils.registerForCourse(student, BuildTestCourses.chem408());
+	    courseUtils.registerForCourse(student, BuildTestCourses.insc480());
+	    courseUtils.registerForCourse(student, BuildTestCourses.emech210());
+	    courseUtils.registerForCourse(student, BuildTestCourses.span200());
+	    courseUtils.registerForCourse(student, BuildTestCourses.music421());
 
-		assertTrue(courseUtils.calcStudentLoad(student) <= CourseUtils.MAX_ALLOWED,
-				"Student has more than allowed credit hours.");
+	  } catch (Exception e) {
+	    System.out.println(e.getClass().getName());
+	    assertTrue(e.getClass().getName().equals("java.lang.Exception"));
+	  }
+
+	  assertTrue(courseUtils.calcStudentLoad(student) <= CourseUtils.MAX_ALLOWED,
+	      "Student has more than allowed credit hours.");
 	}
 
 	/*
