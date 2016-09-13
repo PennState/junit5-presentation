@@ -13,14 +13,23 @@ import edu.psu.swe.testing.junit5.presentation.affiliates.utilities.CourseUtils;
 import edu.psu.swe.testing.junit5.presentation.supportingcode.BuildTestCourses;
 import edu.psu.swe.testing.junit5.presentation.supportingcode.SampleStudents;
 
-//Asserts exceptions
+/*
+ * This class provides examples of how to use assertThrows and
+ * expectException, along with an explanation of the differences
+ * between the two test types.
+ */
+
+
 public class ExceptionTests {
 
 	CourseUtils courseUtils = new CourseUtils();
 
 	/*
-	 * student is allowed to register as many courses and asserts if registered
-	 * courses exceed maximum credits.
+	 * Register a student for classes. After the requested courses have been
+	 * added, check that the student hasn't exceeded the allowed course load.
+	 * This test is designed to fail because the addCourse function is checking
+	 * the course load and will throw an exception when the student attempts to 
+	 * exceed limits. The subsequent tests will show how to expect this exception.
 	 */
 	@Test
 	@DisplayName("register-course-assertion-test")
@@ -28,7 +37,6 @@ public class ExceptionTests {
 		Student student = SampleStudents.getNewFreshman();
 
 		student.addCourse(BuildTestCourses.emech210());
-
 		student.addCourse(BuildTestCourses.engl213());
 		student.addCourse(BuildTestCourses.math220());
 		student.addCourse(BuildTestCourses.stat401());
@@ -39,17 +47,18 @@ public class ExceptionTests {
 		student.addCourse(BuildTestCourses.music421());
 		student.addCourse(BuildTestCourses.emech211());
 
-		assertTrue(courseUtils.calcStudentLoad(student) <= courseUtils.MAX_ALLOWED,
+		assertTrue(courseUtils.calcStudentLoad(student) <= CourseUtils.MAX_ALLOWED,
 				"Student has more than allowed credit hours.");
 	}
 
 	/*
-	 * asserts that an exception is thrown when student registers over credit
-	 * limits.
+	 * Asserts that an exception is thrown when student registers over credit
+	 * limits. The asertThrows test only checks that the exception class thrown
+	 * matches the expected exception class indicated. 
 	 */
 	@Test
 	@DisplayName("assertThrows-test")
-	void registerCourseTest1() {
+	public void registerCourseTest1() {
 		Student student = SampleStudents.getNewFreshman();
 
 		CourseUtils courseUtils = new CourseUtils();
@@ -64,15 +73,17 @@ public class ExceptionTests {
 			courseUtils.registerForCourse(student, BuildTestCourses.span200());
 			courseUtils.registerForCourse(student, BuildTestCourses.music421());
 		});
-
+		
 	}
 
 	/*
-	 * examines the thrown exception when student registers over credit limits.
+	 * Expects to receive an exception of the class type indicated. The difference 
+	 * from assertThrows is that the exception is returned and can be further examined
+	 * for additional criteria.
 	 */
 	@Test
 	@DisplayName("expectThrows-test")
-	void registerCourseTest2() {
+	public void registerCourseTest2() {
 		Student student = SampleStudents.getNewFreshman();
 
 		CourseUtils courseUtils = new CourseUtils();
@@ -87,8 +98,8 @@ public class ExceptionTests {
 			courseUtils.registerForCourse(student, BuildTestCourses.span200());
 			courseUtils.registerForCourse(student, BuildTestCourses.music421());
 		});
+		
 		assertEquals("can't register as student is excedding max allowed creits", exception.getMessage());
-
+		
 	}
-
 }
