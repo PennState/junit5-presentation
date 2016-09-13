@@ -1,6 +1,6 @@
-package edu.psu.swe.testing.junit5.presentation.affiliates.tests;
+package edu.psu.swe.testing.junit5.presentation.supportingcode;
 
-import edu.psu.swe.testing.junit5.presentation.affiliates.models.Student;
+import edu.psu.swe.testing.junit5.presentation.supportingcode.affiliates.models.Student;
 
 public class SampleStudents {
 

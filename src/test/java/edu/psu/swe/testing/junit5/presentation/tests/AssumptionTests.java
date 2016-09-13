@@ -7,55 +7,98 @@ import static org.junit.jupiter.api.Assumptions.assumingThat;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import edu.psu.swe.testing.junit5.presentation.affiliates.models.Affilliate;
-import edu.psu.swe.testing.junit5.presentation.affiliates.models.Student;
-import edu.psu.swe.testing.junit5.presentation.affiliates.tests.BuildTestCourses;
+import edu.psu.swe.testing.junit5.presentation.supportingcode.BuildTestCourses;
+import edu.psu.swe.testing.junit5.presentation.supportingcode.affiliates.models.Affilliate;
+import edu.psu.swe.testing.junit5.presentation.supportingcode.affiliates.models.Staff;
+import edu.psu.swe.testing.junit5.presentation.supportingcode.affiliates.models.Student;
 
+
+/*
+ * Assumptions allow you to skip blocks of code or entire tests tests if the tested criteria is not met.
+ */
 public class AssumptionTests {
 
+  /*
+   * This test runs because the assumeTrue test passes.
+   */
 	@Test
 	@DisplayName("assumeTrue test")
 	public void assumeTrueTest() {
+		System.out.println("testing assumeTrue");
 		Student student = new Student();
-		assumeTrue(checkAffiliateClass(student));
+		assumeTrue(checkIsStudent(student));
 		student.addCourse(BuildTestCourses.engl213());
+		System.out.println("ENGL course added");
 	}
 
+	
 	/*
-	 * assumeFalse passes to skip the test
+	 * The assumeFalse test fails so remainder of the test is skipped and the whole test is marked as skipped.
+	 * The test does not fail, it is simply skipped.
 	 */
 	@Test
 	@DisplayName("assumeFalse test")
 	public void assumeFalseTest() {
+		System.out.println("testing assumeFalse skipping the test");
 		Student student = new Student();
-		assumeFalse(checkAffiliateClass(student));
+		assumeFalse(checkIsStudent(student));
 		student.addCourse(BuildTestCourses.math220());
+		System.out.println("MATH course added");
 	}
 
+	
 	/*
-	 * assumeFalse fails, therefore executing the test
-	 */
-//	@Test
-//	@DisplayName("assumeFalse test fails")
-//	public void assumeFalseFailTest() {
-//		Staff staff = new Staff();
-//		assumeFalse(checkAffiliateClass(staff));
-//		staff.setFirstName("NOSKIP");
-//	}
-
-	/*
-	 * assumingThat - test passes when the assumption is valid
+	 * Here the assumeFalse condition passes so the test is executed.
 	 */
 	@Test
-	@DisplayName("assumingThat test")
-	public void assumingThatTest() {
-		Student student = new Student();
-		assumingThat(checkAffiliateClass(student), () -> {
-			student.addCourse(BuildTestCourses.music421());
-		});
+	@DisplayName("assumeFalse fails test")
+	public void assumeFalseFailTest() {
+		System.out.println("testing assumeFalse failing");
+		Staff staff = new Staff();
+		assumeFalse(checkIsStudent(staff));
+		staff.setFirstName("NOSKIP");
+		System.out.println("staff first name set to " + staff.getFirstName());
 	}
 
-	public boolean checkAffiliateClass(Affilliate affilliate) {
+	
+	/*
+	 * assumingThat - When evaluates true, executes wrapped code.
+	 */
+	@Test
+	@DisplayName("assumingThat successful test")
+	public void assumingThatPassingTest() {
+
+	  Affilliate person = new Student();
+
+		assumingThat(checkIsStudent(person), () -> {
+			System.out.println("The person is a student. Proceeding with assumingThat enclosed code.");
+			Student student = (Student) person;
+			student.addCourse(BuildTestCourses.music421());
+		});
+		
+		System.out.println("The remaining code in the method gets executed no matter what the result of the assumingThat check.");
+	}
+	
+
+  /*
+   * assumingThat - When evaluates false, ignores code within assumingThat block
+   */
+  @Test
+  @DisplayName("assumingThat failing test")
+  public void assumingThatFailingTest() {
+
+    Affilliate person = new Staff();
+
+    assumingThat(checkIsStudent(person), () -> {
+      System.out.println("assumingThat is valid");
+
+    });
+    
+    System.out.println("The remaining code in the method gets executed no matter what the result of the assumingThat check.");
+  }
+
+  
+	public boolean checkIsStudent(Affilliate affilliate) {
 		boolean isStudent = false;
 		if (affilliate.getClass().getName().contains("Student")) {
 			isStudent = true;

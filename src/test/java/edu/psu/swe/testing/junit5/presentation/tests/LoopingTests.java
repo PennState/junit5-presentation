@@ -1,4 +1,4 @@
-package edu.psu.swe.testing.junit5.presentation.affiliates.tests;
+package edu.psu.swe.testing.junit5.presentation.tests;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -13,9 +13,11 @@ import org.junit.jupiter.api.function.Executable;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertNull;
-import edu.psu.swe.testing.junit5.presentation.affiliates.models.Course;
-import edu.psu.swe.testing.junit5.presentation.affiliates.models.Student;
-import edu.psu.swe.testing.junit5.presentation.affiliates.utilities.CourseUtils;
+import edu.psu.swe.testing.junit5.presentation.supportingcode.BuildTestCourses;
+import edu.psu.swe.testing.junit5.presentation.supportingcode.CourseUtils;
+import edu.psu.swe.testing.junit5.presentation.supportingcode.SampleStudents;
+import edu.psu.swe.testing.junit5.presentation.supportingcode.affiliates.models.Course;
+import edu.psu.swe.testing.junit5.presentation.supportingcode.affiliates.models.Student;
 
 /*
  * Tests to look for prerequisites. The various tests all test the same set
