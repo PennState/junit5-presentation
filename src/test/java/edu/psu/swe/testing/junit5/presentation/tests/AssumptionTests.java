@@ -12,61 +12,93 @@ import edu.psu.swe.testing.junit5.presentation.affiliates.models.Staff;
 import edu.psu.swe.testing.junit5.presentation.affiliates.models.Student;
 import edu.psu.swe.testing.junit5.presentation.supportingcode.BuildTestCourses;
 
+
+/*
+ * Assumptions allow you to skip blocks of code or entire tests tests if the tested criteria is not met.
+ */
 public class AssumptionTests {
 
+  /*
+   * This test runs because the assumeTrue test passes.
+   */
 	@Test
 	@DisplayName("assumeTrue test")
 	public void assumeTrueTest() {
 		System.out.println("testing assumeTrue");
 		Student student = new Student();
-		assumeTrue(checkAffiliateClass(student));
+		assumeTrue(checkIsStudent(student));
 		student.addCourse(BuildTestCourses.engl213());
 		System.out.println("ENGL course added");
 	}
 
+	
 	/*
-	 * assumeFalse passes to skip the test
+	 * The assumeFalse test fails so remainder of the test is skipped and the whole test is marked as skipped.
+	 * The test does not fail, it is simply skipped.
 	 */
 	@Test
 	@DisplayName("assumeFalse test")
 	public void assumeFalseTest() {
 		System.out.println("testing assumeFalse skipping the test");
 		Student student = new Student();
-		assumeFalse(checkAffiliateClass(student));
+		assumeFalse(checkIsStudent(student));
 		student.addCourse(BuildTestCourses.math220());
 		System.out.println("MATH course added");
 	}
 
+	
 	/*
-	 * assumeFalse fails, therefore executing the test
+	 * Here the assumeFalse condition passes so the test is executed.
 	 */
 	@Test
 	@DisplayName("assumeFalse fails test")
 	public void assumeFalseFailTest() {
 		System.out.println("testing assumeFalse failing");
 		Staff staff = new Staff();
-		assumeFalse(checkAffiliateClass(staff));
+		assumeFalse(checkIsStudent(staff));
 		staff.setFirstName("NOSKIP");
 		System.out.println("staff first name set to " + staff.getFirstName());
 	}
 
+	
 	/*
-	 * assumingThat - test passes when the assumption is valid
+	 * assumingThat - When evaluates true, executes wrapped code.
 	 */
 	@Test
-	@DisplayName("assumingThat test")
-	public void assumingThatTest() {
+	@DisplayName("assumingThat successful test")
+	public void assumingThatPassingTest() {
 
-		Student student = new Student();
+	  Affilliate person = new Student();
 
-		assumingThat(checkAffiliateClass(student), () -> {
-			System.out.println("assumingThat is valid");
+		assumingThat(checkIsStudent(person), () -> {
+			System.out.println("The person is a student. Proceeding with assumingThat enclosed code.");
+			Student student = (Student) person;
 			student.addCourse(BuildTestCourses.music421());
 		});
-
+		
+		System.out.println("The remaining code in the method gets executed no matter what the result of the assumingThat check.");
 	}
+	
 
-	public boolean checkAffiliateClass(Affilliate affilliate) {
+  /*
+   * assumingThat - When evaluates false, ignores code within assumingThat block
+   */
+  @Test
+  @DisplayName("assumingThat failing test")
+  public void assumingThatFailingTest() {
+
+    Affilliate person = new Staff();
+
+    assumingThat(checkIsStudent(person), () -> {
+      System.out.println("assumingThat is valid");
+
+    });
+    
+    System.out.println("The remaining code in the method gets executed no matter what the result of the assumingThat check.");
+  }
+
+  
+	public boolean checkIsStudent(Affilliate affilliate) {
 		boolean isStudent = false;
 		if (affilliate.getClass().getName().contains("Student")) {
 			isStudent = true;
