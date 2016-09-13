@@ -1,4 +1,4 @@
-package edu.psu.swe.testing.junit5.presentation.affiliates.utilities;
+package edu.psu.swe.testing.junit5.presentation.supportingcode;
 
 import java.util.List;
 import java.util.stream.Stream;
