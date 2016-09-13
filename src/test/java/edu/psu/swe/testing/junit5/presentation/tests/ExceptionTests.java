@@ -102,7 +102,7 @@ public class ExceptionTests {
 			courseUtils.registerForCourse(student, BuildTestCourses.music421());
 		});
 		
-		assertEquals("can't register as student is excedding max allowed creits", exception.getMessage());
+		assertEquals("Can't register student for course. Student would exceed max allowed credits.", exception.getMessage());
 		
 	}
 }

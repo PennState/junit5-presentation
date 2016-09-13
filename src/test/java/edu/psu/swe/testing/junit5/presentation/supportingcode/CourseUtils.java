@@ -6,6 +6,10 @@ import java.util.stream.Stream;
 import edu.psu.swe.testing.junit5.presentation.affiliates.models.Course;
 import edu.psu.swe.testing.junit5.presentation.affiliates.models.Student;
 
+/*
+ * CourseUtils - Utility class to provide methods for registering students for courses.
+ */
+
 public class CourseUtils {
 
 	public static int FULL_TIME = 12;
@@ -19,7 +23,7 @@ public class CourseUtils {
 		if ((studentCourseLoad + courseCredit) <= CourseUtils.MAX_ALLOWED) {
 			student.addCourse(course);
 		} else {
-			throw new Exception("can't register as student is excedding max allowed creits");
+			throw new Exception("Can't register student for course. Student would exceed max allowed credits.");
 		}
 
 	}
