@@ -29,7 +29,6 @@ public class AssertionTests {
 	@DisplayName("assertTrue test - with λ")
 	void checkforNull() {
 		Student newStudent = SampleStudents.getNewFreshman();
-		// newStudent.addCourse(BuildTestCourses.chem408());
 		assertTrue(newStudent.getCourses().size() == 0,
 				() -> "new student (" + newStudent.getFirstName() + ") should have 0 credits.");
 	}
