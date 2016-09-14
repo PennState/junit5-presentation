@@ -17,6 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import edu.psu.swe.testing.junit5.presentation.supportingcode.CourseUtils;
 import edu.psu.swe.testing.junit5.presentation.supportingcode.affiliates.models.Course;
 import edu.psu.swe.testing.junit5.presentation.supportingcode.affiliates.models.Student;
+import edu.psu.swe.testing.junit5.presentation.tests.extensions.StudentSimpleParameterResolver;
 
 /*
  * Tests to look for prerequisites. The various tests all test the same set
@@ -31,7 +32,7 @@ public class LoopingTestsParameterized {
 	 * conditions.
 	 */
 	@Test
-	@DisplayName("Parameterized Testing using a ForLoop")
+	@DisplayName("Student Parameterized For Loop")
 	public void courseAddLoopTest(Student stud){
 	  
 		List<Course> courses = stud.getCourses();		
@@ -40,7 +41,7 @@ public class LoopingTestsParameterized {
 
 	
 	 @Test
-	  @DisplayName("Parameterized Testing using a ForLoop")
+	  @DisplayName("Course Parameterized For Loop")
 	  public void courseAddLoopTest(List<Course> courses){
 	    for (Course currCourse : courses){
 	      assertTrue(CourseUtils.findPrereq(currCourse) == null,
@@ -59,7 +60,7 @@ public class LoopingTestsParameterized {
 	public Stream<DynamicTest> courseAddTestFactoryTest(Stream<Course> courseStream){
 
 		Stream<DynamicTest> factoryTests = courseStream.map((c) -> 
-		  DynamicTest.dynamicTest("Course: " + c.getName(), () -> 
+		  DynamicTest.dynamicTest("Parameterized Course: " + c.getName(), () -> 
 		  assertTrue(CourseUtils.findPrereq(c) == null, "Prerequisite requires for this course.")));
 
 		return factoryTests;
@@ -75,10 +76,10 @@ public class LoopingTestsParameterized {
 	 */
 	@Test
 	@DisplayName("Parameterized Testing using AssertAll")
-	public void courseAddAssertAllTest(Stream<Course> courses){
+	public void courseAddAssertAllTest(Stream<Course> courseStream){
 
 		assertAll(
-		    courses.map((c) -> new Executable() {
+		    courseStream.map((c) -> new Executable() {
 					@Override
 					public void execute() throws Throwable{
 						assertNull(CourseUtils.findPrereq(c));
