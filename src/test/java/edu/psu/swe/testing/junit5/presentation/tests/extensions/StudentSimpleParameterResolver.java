@@ -1,4 +1,4 @@
-package edu.psu.swe.testing.junit5.presentation.tests;
+package edu.psu.swe.testing.junit5.presentation.tests.extensions;
 
 import java.util.List;
 import java.util.stream.Stream;

@@ -12,6 +12,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.api.extension.ExtendWith;
 
+import edu.psu.swe.testing.junit5.presentation.tests.extensions.AfflliateDetector;
+
 /*
  * Illustrates extensions with @ExtendWith
  * Also illustrates scenarios for disabling tests at compile and run times

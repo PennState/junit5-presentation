@@ -1,7 +1,7 @@
 /**
  * 
  */
-package edu.psu.swe.testing.junit5.presentation.tests;
+package edu.psu.swe.testing.junit5.presentation.tests.extensions;
 
 import java.lang.reflect.Method;
 
