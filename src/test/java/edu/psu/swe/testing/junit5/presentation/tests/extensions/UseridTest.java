@@ -1,4 +1,4 @@
-package edu.psu.swe.testing.junit5.presentation;
+package edu.psu.swe.testing.junit5.presentation.tests.extensions;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

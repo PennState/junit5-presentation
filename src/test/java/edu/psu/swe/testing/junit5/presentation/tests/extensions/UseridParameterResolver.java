@@ -1,7 +1,4 @@
-/**
- * 
- */
-package edu.psu.swe.testing.junit5.presentation;
+package edu.psu.swe.testing.junit5.presentation.tests.extensions;
 
 import java.lang.reflect.Method;
 import java.util.Optional;
@@ -11,15 +8,8 @@ import org.junit.jupiter.api.extension.ParameterContext;
 import org.junit.jupiter.api.extension.ParameterResolutionException;
 import org.junit.jupiter.api.extension.ParameterResolver;
 
-/**
- * @author smoyer1
- *
- */
 public class UseridParameterResolver implements ParameterResolver {
 
-  /* (non-Javadoc)
-   * @see org.junit.jupiter.api.extension.ParameterResolver#supports(org.junit.jupiter.api.extension.ParameterContext, org.junit.jupiter.api.extension.ExtensionContext)
-   */
   @Override
   public boolean supports(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
     boolean supports = false;
@@ -37,12 +27,8 @@ public class UseridParameterResolver implements ParameterResolver {
     return supports;
   }
 
-  /* (non-Javadoc)
-   * @see org.junit.jupiter.api.extension.ParameterResolver#resolve(org.junit.jupiter.api.extension.ParameterContext, org.junit.jupiter.api.extension.ExtensionContext)
-   */
   @Override
   public Object resolve(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
-    // TODO Auto-generated method stub
     Object parameter = null;
     
     Class<?> parameterClass = parameterContext.getParameter().getType();
