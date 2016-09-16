@@ -27,10 +27,10 @@ public class AssertionTests {
 
 	@Test
 	@DisplayName("assertTrue test - with λ")
-	void checkforNull() {
+	void checkforCourses() {
 		Student newStudent = SampleStudents.getNewFreshman();
 		assertTrue(newStudent.getCourses().size() == 0,
-				() -> "new student (" + newStudent.getFirstName() + ") should have 0 credits.");
+				() -> "new student has " + newStudent.getCourses().size()+ " courses.");
 	}
 
 	/*
