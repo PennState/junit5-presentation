@@ -12,7 +12,7 @@ import edu.psu.swe.testing.junit5.presentation.tests.extensions.Small;
 public class TaggingTest {
 
   @Test
-  @Tag("Small")
+  @Tag("small")
   @DisplayName("Test that assertEquals() is true when applicable")
   public void testAssertEqualsTrue() {
     assertEquals(2, 2);

@@ -13,12 +13,12 @@ public class AfflliateDetector implements TestExecutionCondition {
 
 	@Override
 	public ConditionEvaluationResult evaluate(TestExtensionContext context) {
-		ConditionEvaluationResult result = ConditionEvaluationResult.enabled("Affiliate is a student");
+		ConditionEvaluationResult result = ConditionEvaluationResult.enabled("is an affiliate");
 
 		if (context.getTestMethod().isPresent()) {
 			Method method = context.getTestMethod().get();
 			if (!method.getName().toLowerCase().contains("affiliate")) {
-				result = ConditionEvaluationResult.disabled("Affiliate is not a student");
+				result = ConditionEvaluationResult.disabled("is not an affiliate");
 			}
 		}
 
