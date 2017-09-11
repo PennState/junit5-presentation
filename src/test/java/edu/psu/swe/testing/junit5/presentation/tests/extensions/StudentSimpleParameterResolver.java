@@ -15,7 +15,7 @@ public class StudentSimpleParameterResolver implements ParameterResolver {
 
 
   @Override
-  public boolean supports(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
+  public boolean supportsParameter(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
     boolean supports = false;
 
     Class<?> parameterClass = parameterContext.getParameter().getType();
@@ -29,8 +29,7 @@ public class StudentSimpleParameterResolver implements ParameterResolver {
   
 
   @Override
-  public Object resolve(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
-    // TODO Auto-generated method stub
+  public Object resolveParameter(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
     Object parameter = null;
     Student stud = SampleStudents.getMaxedStudent();
     

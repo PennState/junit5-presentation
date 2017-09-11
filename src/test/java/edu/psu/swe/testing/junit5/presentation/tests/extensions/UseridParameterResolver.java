@@ -11,7 +11,7 @@ import org.junit.jupiter.api.extension.ParameterResolver;
 public class UseridParameterResolver implements ParameterResolver {
 
   @Override
-  public boolean supports(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
+  public boolean supportsParameter(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
     boolean supports = false;
     
     if(extensionContext.getTestMethod().isPresent()) {
@@ -28,7 +28,7 @@ public class UseridParameterResolver implements ParameterResolver {
   }
 
   @Override
-  public Object resolve(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
+  public Object resolveParameter(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
     Object parameter = null;
     
     Class<?> parameterClass = parameterContext.getParameter().getType();
