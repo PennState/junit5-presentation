@@ -10,12 +10,12 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
 
-    <qualifier.junit>SNAPSHOT</qualifier.junit>
+    <qualifier.junit></qualifier.junit>
 
     <version.junit>4.12</version.junit>
-    <version.junit.jupiter>5.0.0-${qualifier.junit}</version.junit.jupiter>
-    <version.junit.platform>1.0.0-${qualifier.junit}</version.junit.platform>
-    <version.junit.vintage>${version.junit}.0-${qualifier.junit}</version.junit.vintage>
+    <version.junit.jupiter>5.0.0${qualifier.junit}</version.junit.jupiter>
+    <version.junit.platform>1.0.0${qualifier.junit}</version.junit.platform>
+    <version.junit.vintage>${version.junit}.0${qualifier.junit}</version.junit.vintage>
   </properties>
 
   <repositories>
