@@ -9,9 +9,7 @@ import org.junit.jupiter.api.extension.AfterTestExecutionCallback;
 import org.junit.jupiter.api.extension.BeforeAllCallback;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.BeforeTestExecutionCallback;
-import org.junit.jupiter.api.extension.ContainerExtensionContext;
 import org.junit.jupiter.api.extension.ExtensionContext;
-import org.junit.jupiter.api.extension.TestExtensionContext;
 
 /**
  * @author smoyer1
@@ -32,7 +30,7 @@ public class AllCallbacks implements
    * beforeTestExecution(org.junit.jupiter.api.extension.TestExtensionContext)
    */
   @Override
-  public void beforeTestExecution(TestExtensionContext context) throws Exception {
+  public void beforeTestExecution(ExtensionContext context) throws Exception {
     recordCall(context, "BeforeTestExecutionCallback");
   }
 
@@ -44,7 +42,7 @@ public class AllCallbacks implements
    * jupiter.api.extension.TestExtensionContext)
    */
   @Override
-  public void beforeEach(TestExtensionContext context) throws Exception {
+  public void beforeEach(ExtensionContext context) throws Exception {
     recordCall(context, "BeforeEachCallback");
   }
 
@@ -55,7 +53,7 @@ public class AllCallbacks implements
    * jupiter.api.extension.ContainerExtensionContext)
    */
   @Override
-  public void beforeAll(ContainerExtensionContext context) throws Exception {
+  public void beforeAll(ExtensionContext context) throws Exception {
     recordCall(context, "BeforeAllCallback");
   }
 
@@ -66,7 +64,7 @@ public class AllCallbacks implements
    * afterTestExecution(org.junit.jupiter.api.extension.TestExtensionContext)
    */
   @Override
-  public void afterTestExecution(TestExtensionContext context) throws Exception {
+  public void afterTestExecution(ExtensionContext context) throws Exception {
     recordCall(context, "AfterTestExecutionCallback");
   }
 
@@ -77,7 +75,7 @@ public class AllCallbacks implements
    * jupiter.api.extension.TestExtensionContext)
    */
   @Override
-  public void afterEach(TestExtensionContext context) throws Exception {
+  public void afterEach(ExtensionContext context) throws Exception {
     recordCall(context, "AfterEachCallback");
   }
 
@@ -89,7 +87,7 @@ public class AllCallbacks implements
    * .api.extension.ContainerExtensionContext)
    */
   @Override
-  public void afterAll(ContainerExtensionContext context) throws Exception {
+  public void afterAll(ExtensionContext context) throws Exception {
     recordCall(context, "AfterAllCallback");
   }
 
