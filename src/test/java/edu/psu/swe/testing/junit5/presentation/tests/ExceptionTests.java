@@ -3,7 +3,6 @@ package edu.psu.swe.testing.junit5.presentation.tests;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.expectThrows;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -91,7 +90,7 @@ public class ExceptionTests {
 
 		CourseUtils courseUtils = new CourseUtils();
 
-		Throwable exception = expectThrows(Exception.class, () -> {
+		Throwable exception = assertThrows(Exception.class, () -> {
 			courseUtils.registerForCourse(student, BuildTestCourses.engl213());
 			courseUtils.registerForCourse(student, BuildTestCourses.math220());
 			courseUtils.registerForCourse(student, BuildTestCourses.stat401());
