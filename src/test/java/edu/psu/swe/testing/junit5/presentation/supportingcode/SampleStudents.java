@@ -15,6 +15,7 @@ public class SampleStudents {
 		engStudent.addCourse(BuildTestCourses.emech212());
 		engStudent.addCourse(BuildTestCourses.math220());
 		engStudent.addCourse(BuildTestCourses.stat401());
+		engStudent.setStudentAge(19);
 		
 		return engStudent;
 	}
@@ -27,6 +28,7 @@ public class SampleStudents {
 		partTimeStudent.setMajor("Business");
 		partTimeStudent.addCourse(BuildTestCourses.emech210());
 		partTimeStudent.addCourse(BuildTestCourses.emech211());
+		partTimeStudent.setStudentAge(25);
 		
 		return partTimeStudent;
 	}
@@ -36,7 +38,7 @@ public class SampleStudents {
 		freshman.setLastName("Blutarsky");
 		freshman.setFirstName("John");
 		freshman.setMajor("Party Studies");
-		
+		freshman.setStudentAge(18);
 		return freshman;
 	}
 	
@@ -53,6 +55,7 @@ public class SampleStudents {
 		maxed.addCourse(BuildTestCourses.emech210());
 		maxed.addCourse(BuildTestCourses.span200());
 		maxed.addCourse(BuildTestCourses.music421());
+		maxed.setStudentAge(20);
 		
 		return maxed;
 	}

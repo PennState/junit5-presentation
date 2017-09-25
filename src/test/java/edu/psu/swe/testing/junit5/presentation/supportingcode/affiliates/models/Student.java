@@ -9,6 +9,7 @@ public class Student extends Affilliate{
 	private Staff advisor;
 	private List<Course> courses;
 	private int semesterNumber;
+	private int studentAge;
 	
 	public String getMajor() {
 		return major;
@@ -46,6 +47,10 @@ public class Student extends Affilliate{
 	public void setSemesterNumber(int semesterNumber) {
 		this.semesterNumber = semesterNumber;
 	}
-	
-	
+  public int getStudentAge() {
+    return studentAge;
+  }
+  public void setStudentAge(int studentAge) {
+    this.studentAge = studentAge;
+  }
 }
