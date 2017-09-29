@@ -67,8 +67,7 @@ public class ParameterizedTests {
   }
   
   private static Stream<Arguments> studentNameAgeData(){
-    return Stream.of(SampleStudents.getMaxedStudent(),
-        SampleStudents.getNewFreshman())
+    return Stream.of(SampleStudents.getMaxedStudent(), SampleStudents.getNewFreshman())
         .map(s -> Arguments.of(s.getFirstName(), s.getLastName(), s.getStudentAge()));
   }
 }
