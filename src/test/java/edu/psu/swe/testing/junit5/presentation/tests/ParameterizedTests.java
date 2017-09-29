@@ -1,8 +1,16 @@
 package edu.psu.swe.testing.junit5.presentation.tests;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import edu.psu.swe.testing.junit5.presentation.supportingcode.CourseUtils;
 import edu.psu.swe.testing.junit5.presentation.supportingcode.SampleStudents;
@@ -12,6 +20,7 @@ public class ParameterizedTests {
   
   private static CourseUtils courseUtils = new CourseUtils();
   
+  @Disabled
   @RepeatedTest(value=21, name="{displayName} Test {currentRepetition} of {totalRepetitions}")
   @DisplayName("Insanity")
   public void insanity_test() {
@@ -28,4 +37,22 @@ public class ParameterizedTests {
     Assertions.assertEquals(student.getStudentAge(), calcAge, "Age extraction should be Idempotent but is not.");
   }
   
+  @ParameterizedTest
+  @CsvFileSource(resources = "/data/students_course.csv")
+  void testWithCsvFileSource(String first, String second, String major, String credits, String courseName) {
+      assertNotNull(first);
+      
+  } 
+  
+  @ParameterizedTest
+  @CsvSource(value = {"Cooper, Sheldon", "Builder, Bob", "Blutarsky, John"})
+  void csvSourceTest(String lastName, String firstName) {
+    System.out.println(lastName + ", " + firstName);
+  }
+  
+  @ParameterizedTest
+  @ValueSource(strings = {"Cooper", "Sheldon", "Builder", "Bob", "Blutarsky", "John"})
+  void valueSourceTest(String name) {
+    System.out.println(name);
+  }
 }
