@@ -24,7 +24,6 @@ public class ParameterizedTests {
   
   private static CourseUtils courseUtils = new CourseUtils();
   
-  @Disabled
   @RepeatedTest(value=21, name="{displayName} Test {currentRepetition} of {totalRepetitions}")
   @DisplayName("Insanity")
   public void insanity_test() {
